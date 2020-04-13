@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7F0635D92444A1B6000D8B6F /* color.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7F0635D82444A1B6000D8B6F /* color.txt */; };
+		7F192D36244370EB0057251A /* RecogniseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F192D35244370EB0057251A /* RecogniseView.swift */; };
+		7F192D382443ADD90057251A /* MenuCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F192D372443ADD90057251A /* MenuCardView.swift */; };
 		7FB3B9AB243DD5C600046CD6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB3B9AA243DD5C600046CD6 /* AppDelegate.swift */; };
 		7FB3B9AD243DD5C600046CD6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB3B9AC243DD5C600046CD6 /* SceneDelegate.swift */; };
 		7FB3B9B0243DD5C600046CD6 /* fourColor.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7FB3B9AE243DD5C600046CD6 /* fourColor.xcdatamodeld */; };
@@ -16,6 +19,7 @@
 		7FB3B9BA243DD5CB00046CD6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FB3B9B8243DD5CB00046CD6 /* LaunchScreen.storyboard */; };
 		7FB3B9C5243DD5CB00046CD6 /* fourColorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB3B9C4243DD5CB00046CD6 /* fourColorTests.swift */; };
 		7FB3B9D0243DD5CB00046CD6 /* fourColorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB3B9CF243DD5CB00046CD6 /* fourColorUITests.swift */; };
+		7FB3B9DE243DEAC300046CD6 /* Defect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB3B9DD243DEAC300046CD6 /* Defect.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +40,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7F0635D82444A1B6000D8B6F /* color.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = color.txt; sourceTree = "<group>"; };
+		7F192D35244370EB0057251A /* RecogniseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecogniseView.swift; sourceTree = "<group>"; };
+		7F192D372443ADD90057251A /* MenuCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCardView.swift; sourceTree = "<group>"; };
 		7FB3B9A7243DD5C600046CD6 /* fourColor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fourColor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FB3B9AA243DD5C600046CD6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7FB3B9AC243DD5C600046CD6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -51,6 +58,7 @@
 		7FB3B9CB243DD5CB00046CD6 /* fourColorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = fourColorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FB3B9CF243DD5CB00046CD6 /* fourColorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fourColorUITests.swift; sourceTree = "<group>"; };
 		7FB3B9D1243DD5CB00046CD6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7FB3B9DD243DEAC300046CD6 /* Defect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defect.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +109,7 @@
 		7FB3B9A9243DD5C600046CD6 /* fourColor */ = {
 			isa = PBXGroup;
 			children = (
+				7F0635D82444A1B6000D8B6F /* color.txt */,
 				7FB3B9AA243DD5C600046CD6 /* AppDelegate.swift */,
 				7FB3B9AC243DD5C600046CD6 /* SceneDelegate.swift */,
 				7FB3B9B1243DD5C600046CD6 /* ContentView.swift */,
@@ -109,6 +118,9 @@
 				7FB3B9BB243DD5CB00046CD6 /* Info.plist */,
 				7FB3B9AE243DD5C600046CD6 /* fourColor.xcdatamodeld */,
 				7FB3B9B5243DD5CB00046CD6 /* Preview Content */,
+				7FB3B9DD243DEAC300046CD6 /* Defect.swift */,
+				7F192D35244370EB0057251A /* RecogniseView.swift */,
+				7F192D372443ADD90057251A /* MenuCardView.swift */,
 			);
 			path = fourColor;
 			sourceTree = "<group>";
@@ -245,6 +257,7 @@
 			files = (
 				7FB3B9BA243DD5CB00046CD6 /* LaunchScreen.storyboard in Resources */,
 				7FB3B9B7243DD5CB00046CD6 /* Preview Assets.xcassets in Resources */,
+				7F0635D92444A1B6000D8B6F /* color.txt in Resources */,
 				7FB3B9B4243DD5CB00046CD6 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -270,10 +283,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7FB3B9DE243DEAC300046CD6 /* Defect.swift in Sources */,
 				7FB3B9AB243DD5C600046CD6 /* AppDelegate.swift in Sources */,
 				7FB3B9AD243DD5C600046CD6 /* SceneDelegate.swift in Sources */,
+				7F192D36244370EB0057251A /* RecogniseView.swift in Sources */,
 				7FB3B9B2243DD5C600046CD6 /* ContentView.swift in Sources */,
 				7FB3B9B0243DD5C600046CD6 /* fourColor.xcdatamodeld in Sources */,
+				7F192D382443ADD90057251A /* MenuCardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

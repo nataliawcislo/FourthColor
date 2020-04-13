@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct MenuCard: View {
+struct MenuCardView: View {
     var body: some View {
         VStack{
                ForEach(defects, id: \.id) { number in
@@ -23,6 +23,7 @@ struct MenuCard: View {
                                VStack{
                                    Button(action: {}){
                                        HStack{
+//                                         TODO: przycisk  dodaj do ulubionych
                                            Text("Make First")
                                            Image(systemName: "star")
                                        }
@@ -36,8 +37,8 @@ struct MenuCard: View {
        }
 }
 
-struct MenuCard_Previews: PreviewProvider {
+struct MenuCardView_Previews: PreviewProvider {
     static var previews: some View {
-        MenuCard()
+        MenuCardView()
     }
 }
