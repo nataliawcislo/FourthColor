@@ -9,33 +9,51 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State  var scrollUp = false
-    @State private var dragged = CGRect.zero
-    
-    var body: some View {
-        NavigationView{
-            ScrollView{
-                ZStack{
-                    MenuCardView()
-                }
-                VStack{
-                    Image(systemName: "arrow.up.circle.fill")
-                    .font(.system(size: 60, weight: .light))
-                    .foregroundColor(Color.pink)
-                    .padding(.top)
-//                  TODO: przycisk przenoszaćy na początek listy
-//                   .gesture(TapGesture().onEnded {_ in self.$dragged.toggle })
-                }
-                }.navigationBarTitle("Defect List")
-            }
-        }
-    }
+	 @State var showMenu = false
 
+    var body: some View {
+		GeometryReader { page in
+			NavigationView{
+				ZStack(alignment: .leading){
+					   HomeView().frame(width: page.size.width, height: page.size.height)
+					   .offset(x: self.showMenu ? page.size.width / 1.5 : 0)
+						//gesty
+					   .navigationBarTitle("Defect title")
+					   .navigationBarItems(leading: Button(action: {
+									withAnimation{self.showMenu.toggle()}}) {
+									Image(systemName: "sidebar.left")
+											 .imageScale(.large)
+											.foregroundColor(.black)
+									   .frame(width: 40, height: 40)
+						   })
+					   if self.showMenu {
+						   MenuView().frame(width: page.size.width / 1.5)
+							   .transition(.move(edge: .leading))
+						}
+				}
+			.navigationBarTitle("Defect title", displayMode: .inline)
+			.navigationBarItems(leading: Button(action: {
+							 withAnimation{self.showMenu.toggle()}}) {
+							 Image(systemName: "sidebar.left")
+									  .imageScale(.large)
+									 .foregroundColor(.black)
+								.frame(width: 40, height: 40)
+				})
+			}
+		}
+	}
+}
+
+
+	
+
+	
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
     }
 }
+
 
 

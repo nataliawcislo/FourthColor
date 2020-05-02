@@ -10,15 +10,16 @@ import SwiftUI
 
 struct MenuCardView: View {
     var body: some View {
-        VStack{
+        VStack(alignment: .leading){
                ForEach(defects, id: \.id) { number in
                    ZStack{
                        NavigationLink(destination: RecognizeView()){
-                          RoundedRectangle(cornerRadius: 20)
-                           .foregroundColor(number.color)
-                           .frame(width: 380, height: 180)
+                        RoundedRectangle(cornerRadius: 20)
+                                .padding(.horizontal, -5.0)
+                           .foregroundColor(Color(.black))
+                                .frame(height: 180.0)
                            .shadow(color: Color("Color7"), radius: 3).opacity(1)
-                           .overlay(Text(number.name).font(.custom("Helvetica Neue", size: 40)).foregroundColor(.white))
+                           .overlay(Text(number.name).font(.custom("Helvetica Neue", size: 36)).foregroundColor(.white))
                            .contextMenu{
                                VStack{
                                    Button(action: {}){
