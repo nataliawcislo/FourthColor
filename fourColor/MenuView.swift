@@ -10,13 +10,14 @@ import SwiftUI
 
 struct MenuView: View {
     var body: some View {
+        
         VStack{
             VStack{
                Image(systemName: "eye")
-                .font(.system(size: 42, weight: .light))
+                .font(.system(size: 42, weight: .light)).padding(.top, 5)
                 Text("Forth Color")
-                .font(.custom("Helvetica Neue", size: 14))
-            }.padding(.vertical, 5)
+                    .font(.custom("Helvetica Neue", size: 14)).padding(.bottom, 10)
+            }.padding(.top, 25)
             Divider().background(Color.black)
             
             VStack(alignment: .leading){
@@ -29,6 +30,7 @@ struct MenuView: View {
                 }.padding(.top, 30)
                 
                 HStack{
+                    // NavigationLink(destination: RemeberItemsListView()){
                     Image(systemName: "magnifyingglass")
                         .font(.system(size: 20, weight: .light))
                     Text("Recognise").font(.custom("Helvetica Neue", size: 18))
@@ -53,11 +55,13 @@ struct MenuView: View {
                         .font(.system(size: 20, weight: .light))
                     Text("Setting").font(.custom("Helvetica Neue", size: 18))
                     Spacer()
-                }.padding(.bottom, 30.0)
+                }
                 
             }.padding(.leading, 20.0)
-        }.padding(.top, 40.0)
-        .background(Color("Color"))
+        }.padding(.vertical, 60.0)
+            .background(Color("Color"))
+            .edgesIgnoringSafeArea(.vertical)
+        
         
     }
 }
