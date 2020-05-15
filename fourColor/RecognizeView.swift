@@ -14,6 +14,10 @@ struct RecognizeView: View {
     var body: some View {
         ZStack{
             CameraView()
+                .navigationBarTitle("")
+                .navigationBarHidden(true)
+                .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
+                .edgesIgnoringSafeArea(.all)
         }
     }
 }
@@ -91,7 +95,6 @@ class CameraViewController : UIViewController, AVCaptureVideoDataOutputSampleBuf
     func setupUI() {
         previewLayer.position = view.center
         previewLayer.contentsGravity = CALayerContentsGravity.resizeAspectFill
-//        previewLayer.setAffineTransform(CGAffineTransform(rotationAngle: CGFloat(.pi / 2.0)))
         previewLayer.frame = view.frame
         view.layer.addSublayer(previewLayer)
         
@@ -99,7 +102,6 @@ class CameraViewController : UIViewController, AVCaptureVideoDataOutputSampleBuf
         pickerLayer.contentsGravity = CALayerContentsGravity.resizeAspectFill
         pickerLayer.strokeColor = UIColor.black.cgColor
         pickerLayer.lineWidth = 3.0
-//        pickerLayer.setAffineTransform(CGAffineTransform(rotationAngle: CGFloat(.pi / 2.0)))
         pickerLayer.frame = view.frame
         view.layer.addSublayer(pickerLayer)
         
