@@ -53,6 +53,7 @@ class CameraViewController : UIViewController, AVCaptureVideoDataOutputSampleBuf
     var currentDevice: AVCaptureDevice?
     
     func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
+        connection.videoOrientation = AVCaptureVideoOrientation.portrait
         guard let imageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else {
             return
         }
@@ -78,31 +79,48 @@ class CameraViewController : UIViewController, AVCaptureVideoDataOutputSampleBuf
         
         DispatchQueue.main.async {
             self.previewLayer.contents = cgImage
+            self.pickerLayer.path = UIBezierPath(arcCenter: self.center, radius: CGFloat(20), startAngle: CGFloat(0), endAngle: CGFloat(Double.pi * 2), clockwise: true).cgPath
             let color = self.previewLayer.pickColor(at: self.center)
-            self.view.backgroundColor = color // TODO: zmienic na kolor kolka
-            self.lineShape.strokeColor = color?.cgColor
+            self.pickerLayer.fillColor = color?.cgColor
         }
     }
     
     let previewLayer = CALayer()
-    let lineShape = CAShapeLayer()
+    let pickerLayer = CAShapeLayer()
     
     func setupUI() {
-        let cameraPreview = AVCaptureVideoPreviewLayer(session: captureSession)
-        view.layer.addSublayer(cameraPreview)
-        cameraPreview.frame = view.frame
+        previewLayer.position = view.center
+        previewLayer.contentsGravity = CALayerContentsGravity.resizeAspectFill
+//        previewLayer.setAffineTransform(CGAffineTransform(rotationAngle: CGFloat(.pi / 2.0)))
+        previewLayer.frame = view.frame
+        view.layer.addSublayer(previewLayer)
+        
+        pickerLayer.position = view.center
+        pickerLayer.contentsGravity = CALayerContentsGravity.resizeAspectFill
+        pickerLayer.strokeColor = UIColor.black.cgColor
+        pickerLayer.lineWidth = 3.0
+//        pickerLayer.setAffineTransform(CGAffineTransform(rotationAngle: CGFloat(.pi / 2.0)))
+        pickerLayer.frame = view.frame
+        view.layer.addSublayer(pickerLayer)
+        
+//        let testLayer = CALayer()
+//        testLayer.position = view.center
+//        testLayer.contentsGravity = CALayerContentsGravity.resizeAspectFill
+//        testLayer.contents = UIImage(imageLiteralResourceName: "1").cgImage
+//        testLayer.setAffineTransform(CGAffineTransform(rotationAngle: CGFloat(-.pi / 2.0)))
+//        testLayer.frame = view.frame
+//        view.layer.addSublayer(testLayer)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
         loadCamera()
-        DetectorView()
     }
     
     let queue = DispatchQueue(label: "com.camera.video.queue")
     
-    var center: CGPoint = CGPoint(x: WIDTH/2, y: HEIGHT/2)
+    var center: CGPoint = CGPoint(x: WIDTH / 2, y: HEIGHT / 2)
     
     func loadCamera() {
         self.captureSession.sessionPreset = AVCaptureSession.Preset.hd1280x720
@@ -186,3 +204,20 @@ public extension CALayer {
                        alpha: CGFloat(pixel[3]) / 255.0)
     }
 }
+
+//extension CGImage {
+//    func getPixelColor(pos: CGPoint) -> UIColor {
+//
+//        let pixelData = self.dataProvider!.data
+//        let data: UnsafePointer<UInt8> = CFDataGetBytePtr(pixelData)
+//
+//        let pixelInfo: Int = ((Int(self.size.width) * Int(pos.y)) + Int(pos.x)) * 4
+//
+//        let r = CGFloat(data[pixelInfo]) / CGFloat(255.0)
+//        let g = CGFloat(data[pixelInfo+1]) / CGFloat(255.0)
+//        let b = CGFloat(data[pixelInfo+2]) / CGFloat(255.0)
+//        let a = CGFloat(data[pixelInfo+3]) / CGFloat(255.0)
+//
+//        return UIColor(red: r, green: g, blue: b, alpha: a)
+//    }
+//}
