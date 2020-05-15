@@ -12,7 +12,6 @@ struct RemeberItemsListView: View {
     //let lista = ["", "", "", ""]
     var body: some View {
         NavigationView {
-            
            List{
                GridView()
            }.navigationBarTitle("Donut Gallery Grid")
