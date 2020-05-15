@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct RebemberItemView: View {
+    let image: Image
     
     var body: some View {
         ScrollView(.vertical){
@@ -22,7 +23,7 @@ struct RebemberItemView: View {
                     GeometryReader { (geometry: GeometryProxy) in
                         
                         
-                        Image("3").resizable()
+                        self.image.resizable()
                             .cornerRadius(40)
                             .aspectRatio(contentMode: .fill)
                             .offset(y: geometry.frame(in: .global).minY > 0 ? -geometry.frame(in: .global).minY : 0)
@@ -72,6 +73,6 @@ struct RebemberItemView: View {
 
 struct InfoView_Previews: PreviewProvider {
     static var previews: some View {
-        RebemberItemView()
+        RebemberItemView(image: Image("3"))
     }
 }

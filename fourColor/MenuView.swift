@@ -13,6 +13,7 @@ struct MenuView: View {
     
     var body: some View {
         VStack{
+            Spacer()
             VStack{
                 Image(systemName: "eye")
                     .font(.system(size: 42, weight: .light)).padding(.top, 5)
@@ -57,7 +58,7 @@ struct MenuView: View {
                             Image(systemName: "heart")
                                 .font(.system(size: 20, weight: .light))
                             Text("The best").font(.custom("Helvetica Neue", size: 18))
-                        }
+                        }.navigationBarTitle("Grid")
                     }.padding(.top, 30)
                 }
                 

@@ -13,9 +13,7 @@ import UIKit
 struct RecognizeView: View {
     var body: some View {
         ZStack{
-            //TODO: Kamera działa, koło jescze nie zmienia swojej pozycji pod czas pracy aparatu.
             CameraView()
-            DetectorView()
         }
     }
 }
@@ -31,7 +29,6 @@ struct RecogniseView_Previews: PreviewProvider {
 struct CameraView : UIViewControllerRepresentable {
     func makeUIViewController(context: UIViewControllerRepresentableContext<CameraView>) -> UIViewController {
         let controller = CameraViewController()
-//        controller.delegate
         return controller
     }
 
@@ -100,6 +97,7 @@ class CameraViewController : UIViewController, AVCaptureVideoDataOutputSampleBuf
         super.viewDidLoad()
         setupUI()
         loadCamera()
+        DetectorView()
     }
     
     let queue = DispatchQueue(label: "com.camera.video.queue")
