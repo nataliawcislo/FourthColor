@@ -24,7 +24,7 @@ struct HomeView: View {
                     }){
                         Image(systemName: "arrow.up.circle.fill")
                             .font(.system(size: 60, weight: .light))
-                            .foregroundColor(Color("arrow"))
+                            .foregroundColor(Color(.purple))
                     }.padding(.bottom, 40.0)
                 }
             }

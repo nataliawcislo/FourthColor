@@ -10,26 +10,22 @@ import SwiftUI
 
 struct Info: View {
     @Environment(\.presentationMode) var presentationMode
+    
+    var defect: Defect
+    
     var body: some View {
         
         VStack{
             
             VStack{
                 ZStack{
-                    Image("Deuteranomaly").resizable().frame(height: 180)
-            
-                
-                    Button(action: {
-                        // Navigate to the previous screen
-                        self.presentationMode.wrappedValue.dismiss()
-                    }, label: {
-                        Image(systemName: "chevron.left.circle.fill")
-                            .font(.largeTitle)
-                            .foregroundColor(.black)
-                    }).offset(x:-165,y:-35)
+                    //image
+                    Image(defect.image).resizable().frame(height: 180)
+              
                 }
                 ZStack{
-                    Text("Deuteranomaly")
+                    //name
+                    Text(defect.name)
                         .fontWeight(.light)
                         .foregroundColor(Color(.black))
                         .padding(.all, 15.0)
@@ -38,7 +34,8 @@ struct Info: View {
                 }
                 .padding(.vertical, 3)
                 VStack{
-                    Text("zdxfgchvjbknl")
+                    //deskryptiom
+                    Text(defect.description)
                     
                 }.padding(.horizontal)
                 Spacer()
@@ -49,6 +46,6 @@ struct Info: View {
 
 struct Info_Previews: PreviewProvider {
     static var previews: some View {
-        Info()
+        Info(defect: defects[1])
     }
 }

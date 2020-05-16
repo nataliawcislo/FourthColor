@@ -24,8 +24,3 @@ let defects: [Defect] = [
     Defect(name: "Tritanomaly", description: "Tritanomaly is a rare, hereditary color vision deficiency affecting blue–green and yellow–red/pink hue discrimination. It is related to chromosome 7.[17] In contrast to tritanopia, the S-cone is malfunctioning but not missing.\n\nWith tritanomaly, S-cones are present, but they are functionally limited. People see blues as greener and the colors yellow and red seem pink. With this type of color blindness, the intensity depends on the functionality of the S-cones.", image: "Tritanomaly"),
     Defect(name: "Acromatopia", description: "A medical syndrome that exhibits symptoms relating to at least five conditions. The term may refer to acquired conditions such as cerebral achromatopsia, but it typically refers to an autosomal recessive congenital color vision condition, the inability to perceive color and to achieve satisfactory visual acuity at high light levels, typically exterior daylight. The syndrome is also present in an incomplete form which is more properly defined as dyschromatopsia. It is estimated to affect 1 in 30,000 live births worldwide.\n\nAside from a complete inability to see color, individuals with complete achromatopsia have a number of other ophthalmologic aberrations. Included among these optical aberrations are greatly decreased visual acuity (<0.1 or 20 in daylight, hemeralopia, nystagmus, and severe photophobia. The fundus of the eye appears completely normal.", image: "Acromatopia"),
 ]
-struct Defect_Previews: PreviewProvider {
-    static var previews: some View {
-        /*@START_MENU_TOKEN@*/Text("Hello, World!")/*@END_MENU_TOKEN@*/
-    }
-}

@@ -67,7 +67,7 @@ struct MenuView: View {
             
         }.padding(.vertical, 60.0)
             .background(Color("Color"))
-            .edgesIgnoringSafeArea(.vertical)
+            .edgesIgnoringSafeArea(.all)
         
     }
 }

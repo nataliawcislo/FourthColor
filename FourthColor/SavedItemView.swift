@@ -11,14 +11,28 @@
 import SwiftUI
 
 struct SavedItemView: View {
-    let image: Image
     @Environment(\.presentationMode) var presentationMode
+    
+    let imageName: String
+    
     var body: some View {
         ScrollView(){
             
             VStack{
                 ZStack{
-                    Image("7").resizable().scaledToFit()
+                    Image(imageName).resizable().scaledToFit().contextMenu {
+                    Button(action: {
+                        UIImageWriteToSavedPhotosAlbum(UIImage(named: self.imageName)!, nil, nil, nil)
+                        
+                    }){
+                        HStack{
+                            
+                            Text("Save")
+                            Image(systemName: "arrow.down")
+                        }
+                        
+                }
+                    }
                     HStack{
                         Button(action: {
                             // Navigate to the previous screen
@@ -29,27 +43,27 @@ struct SavedItemView: View {
                                 .foregroundColor(.white)
                         })
                         Spacer()
-                        
-                        ZStack{
-                            
-                            Image(systemName: "square.and.arrow.up").scaleEffect(1.4)
-                                .frame(width: 40, height: 40).offset(y:-2)  .foregroundColor(.black)
-                                .foregroundColor(.white)
-                                
-                        }.background(Color(.white)).cornerRadius(500)
-                        
-                        
+//
+//                        ZStack{
+//
+//                            Image(systemName: "square.and.arrow.up").scaleEffect(1.4)
+//                                .frame(width: 40, height: 40).offset(y:-2)
+//                                .foregroundColor(.black)
+//
+//                        }.background(Color(.white)).cornerRadius(500)
+//
+//
                     }.padding(.horizontal, 20.0).offset(y:-60)
                 }
                 HStack{
                     ZStack{
                         
-                    Text("Color")
-                        .fontWeight(.light)
-                        .foregroundColor(Color(.black))
-                        .padding(.all, 15.0)
-                        .cornerRadius(20)
-                        .font(.custom("Helvetica Neue", size: 30))
+                        Text("Color")
+                            .fontWeight(.light)
+                            .foregroundColor(Color(.black))
+                            .padding(.all, 15.0)
+                            .cornerRadius(20)
+                            .font(.custom("Helvetica Neue", size: 30))
                     }
                     Spacer()
                     ZStack{
@@ -69,7 +83,7 @@ struct SavedItemView: View {
 }
 struct SavedItemView_Previews: PreviewProvider {
     static var previews: some View {
-        SavedItemView(image: Image("3"))
+        SavedItemView(imageName: "1")
     }
 }
 

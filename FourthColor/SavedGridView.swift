@@ -26,7 +26,7 @@ struct SavedGridView: View {
                             .foregroundColor(.blue)
                     })
                 }.offset(x:20)
-              Spacer()
+                Spacer()
                 ZStack{
                     Text("Gallery")
                         .fontWeight(.light).font(.custom("Helvetica Neue", size: 40)).padding(.top, 10.0)
@@ -65,7 +65,7 @@ struct GridView: View {
                         Image("\(number)").resizable()
                             .aspectRatio(1.0, contentMode: .fit)
                             .cornerRadius(30)
-                        NavigationLink(destination: SavedItemView(image: Image("\(number)"))) {
+                        NavigationLink(destination: SavedItemView(imageName: "\(number)")) {
                             Rectangle().hidden()
                         }
                     }
