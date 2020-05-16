@@ -14,24 +14,33 @@ struct SavedItemView: View {
     @Environment(\.presentationMode) var presentationMode
     
     let imageName: String
-    
+    func shareButton(){
+          isShare.toggle()
+          let image = UIImage(named: imageName)
+          let av = UIActivityViewController(activityItems: [image!], applicationActivities: nil)
+          
+          UIApplication.shared.windows.first?.rootViewController?.present(av, animated: true, completion: nil)
+      }
+
+      @State private var isShare = false
+      
     var body: some View {
         ScrollView(){
             
             VStack{
                 ZStack{
                     Image(imageName).resizable().scaledToFit().contextMenu {
-                    Button(action: {
-                        UIImageWriteToSavedPhotosAlbum(UIImage(named: self.imageName)!, nil, nil, nil)
-                        
-                    }){
-                        HStack{
+                        Button(action: {
+                            UIImageWriteToSavedPhotosAlbum(UIImage(named: self.imageName)!, nil, nil, nil)
                             
-                            Text("Save")
-                            Image(systemName: "arrow.down")
+                        }){
+                            HStack{
+                                
+                                Text("Save")
+                                Image(systemName: "arrow.down")
+                            }
+                            
                         }
-                        
-                }
                     }
                     HStack{
                         Button(action: {
@@ -43,16 +52,16 @@ struct SavedItemView: View {
                                 .foregroundColor(.white)
                         })
                         Spacer()
-//
-//                        ZStack{
-//
-//                            Image(systemName: "square.and.arrow.up").scaleEffect(1.4)
-//                                .frame(width: 40, height: 40).offset(y:-2)
-//                                .foregroundColor(.black)
-//
-//                        }.background(Color(.white)).cornerRadius(500)
-//
-//
+                        
+                        ZStack{
+                            Button(action: shareButton ){
+                            Image(systemName: "square.and.arrow.up").scaleEffect(1.4)
+                                .frame(width: 40, height: 40).offset(y:-2)
+                                .foregroundColor(.black)
+                            }
+                        }.background(Color(.white)).cornerRadius(500)
+                        
+                        
                     }.padding(.horizontal, 20.0).offset(y:-60)
                 }
                 HStack{
