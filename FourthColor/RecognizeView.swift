@@ -69,6 +69,7 @@ let WIDTH = UIScreen.main.bounds.width
 let HEIGHT = UIScreen.main.bounds.height
 
 class CameraViewController : UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate {
+    let colors: ColorSet = ColorSet.new(fromFilename: "colors_small")!
     
     let captureSession = AVCaptureSession()
     
@@ -110,7 +111,8 @@ class CameraViewController : UIViewController, AVCaptureVideoDataOutputSampleBuf
     let previewLayer = CALayer()
     let pickerLayer = CAShapeLayer()
     let labelBackgroundLayer = CAShapeLayer()
-    //    let labelLayer = CATextLayer()
+    let colorLayer = CAShapeLayer()
+    let labelLayer = CATextLayer()
     
     func setupUI() {
         previewLayer.position = view.center
@@ -127,56 +129,62 @@ class CameraViewController : UIViewController, AVCaptureVideoDataOutputSampleBuf
         
         labelBackgroundLayer.position = view.center
         labelBackgroundLayer.contentsGravity = CALayerContentsGravity.resizeAspectFill
-        labelBackgroundLayer.fillColor = UIColor.white.cgColor
+        labelBackgroundLayer.fillColor = UIColor.black.cgColor
         labelBackgroundLayer.frame = view.frame
+        let rect = CGRect(x: 0, y: HEIGHT - 50, width: WIDTH, height: 50)
+        labelBackgroundLayer.path = UIBezierPath(rect: rect).cgPath
         view.layer.addSublayer(labelBackgroundLayer)
         
-        //        labelLayer.position = view.center
-        //        labelLayer.contentsGravity = CALayerContentsGravity.resizeAspectFill
-        //        labelLayer.frame = view.frame
-        //        view.layer.addSublayer(labelLayer)
+        colorLayer.position = view.center
+        colorLayer.contentsGravity = CALayerContentsGravity.resizeAspectFill
+        colorLayer.frame = view.frame
+        colorLayer.path = UIBezierPath(arcCenter: CGPoint(x: 25.0, y: HEIGHT - 25.0), radius: CGFloat(20), startAngle: CGFloat(0), endAngle: CGFloat(Double.pi * 2), clockwise: true).cgPath
+        view.layer.addSublayer(colorLayer)
         
-        //        let testLayer = CALayer()
-        //        testLayer.position = view.center
-        //        testLayer.contentsGravity = CALayerContentsGravity.resizeAspectFill
-        //        testLayer.contents = UIImage(imageLiteralResourceName: "1").cgImage
-        //        testLayer.setAffineTransform(CGAffineTransform(rotationAngle: CGFloat(-.pi / 2.0)))
-        //        testLayer.frame = view.frame
-        //        view.layer.addSublayer(testLayer)
+        labelLayer.position = view.center
+        labelLayer.contentsGravity = CALayerContentsGravity.resizeAspectFill
+        labelLayer.font = UIFont.systemFont(ofSize: 12, weight: UIFont.Weight.light)
+        labelLayer.foregroundColor = UIColor.white.cgColor
+        labelLayer.frame = CGRect(x: 50 + 5, y: HEIGHT - 50 + 3, width: WIDTH - 50, height: 50)
+
+        view.layer.addSublayer(labelLayer)
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         if let touch = touches.first {
             let position = touch.location(in: self.view)
-            updatePickersPosition(at: position)
+            self.pickerPosition = position
+            updatePickersPosition()
             updatePickersColor()
         }
     }
     
-    private func updatePickersPosition(at position: CGPoint) {
-        self.pickerLayer.path = UIBezierPath(arcCenter: position, radius: CGFloat(20), startAngle: CGFloat(0), endAngle: CGFloat(Double.pi * 2), clockwise: true).cgPath
+    private func updatePickersPosition() {
+        self.pickerLayer.path = UIBezierPath(arcCenter: self.pickerPosition!, radius: CGFloat(20), startAngle: CGFloat(0), endAngle: CGFloat(Double.pi * 2), clockwise: true).cgPath
         
-        let rect = CGRect(x: position.x + 20, y: position.y - 20, width: 100, height: 20)
-        self.labelBackgroundLayer.path = UIBezierPath(roundedRect: rect, cornerRadius: 5).cgPath
-        
-        self.pickerPosition = position
+//        let rect = CGRect(x: position.x + 20, y: position.y - 20, width: 100, height: 20)
+//        self.labelBackgroundLayer.path = UIBezierPath(roundedRect: rect, cornerRadius: 5).cgPath
     }
     
     private func updatePickersColor() {
         let color = self.previewLayer.pickColor(at: self.pickerPosition!)
         self.pickerLayer.fillColor = color?.cgColor
+        let recognizedColor = self.colors.getNearest(from: color!)
+        self.colorLayer.fillColor = recognizedColor?.color.cgColor
+        self.labelLayer.string = recognizedColor?.name
+        print(recognizedColor!.name)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
         loadCamera()
-        updatePickersPosition(at: CGPoint(x: WIDTH / 2, y: HEIGHT / 2))
+        updatePickersPosition()
     }
     
     let queue = DispatchQueue(label: "com.camera.video.queue")
     
-    @State public var pickerPosition: CGPoint? = CGPoint(x: WIDTH / 2, y: HEIGHT / 2)
+    var pickerPosition: CGPoint? = CGPoint(x: WIDTH / 2, y: HEIGHT / 2)
     
     func loadCamera() {
         self.captureSession.sessionPreset = AVCaptureSession.Preset.hd1280x720
@@ -276,4 +284,20 @@ public extension CALayer {
 //
 //        return UIColor(red: r, green: g, blue: b, alpha: a)
 //    }
+//}
+
+//public extension CGColor {
+//    func nearestName(from colorList: []) -> String? {
+//        return "test"
+//    }
+//
+//    func getRGB() -> (CGFloat, CGFloat, CGFloat) {
+//        let components = self.components
+//        let r = components![0]
+//        let g = components![1]
+//        let b = components![2]
+//        return (r, g, b)
+//    }
+//
+//    func 
 //}

@@ -20,7 +20,7 @@ struct MenuCardView: View {
                     NavigationLink(destination: RecognizeView()){
                         RoundedRectangle(cornerRadius: 20)
                             .padding(.horizontal, -5.0)
-                            .foregroundColor(Color(.black))
+                            .foregroundColor(Color("ColorCard"))
                             .frame(height: 200.0)
                             .shadow(color: Color(.black), radius: 3).opacity(1)
                             .overlay(Text(defect.name).fontWeight(.light).font(.custom("Helvetica Neue", size: 34)).foregroundColor(.white))
