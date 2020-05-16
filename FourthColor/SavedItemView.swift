@@ -1,0 +1,77 @@
+//
+//  InfoView.swift
+//  fourColor
+//
+//  Created by Natalia Wcisło on 03/05/2020.
+//  Copyright © 2020 Natalia Wcisło. All rights reserved.
+//
+
+
+
+import SwiftUI
+
+struct SavedItemView: View {
+    let image: Image
+    @Environment(\.presentationMode) var presentationMode
+    var body: some View {
+        ScrollView(){
+            
+            VStack{
+                ZStack{
+                    Image("7").resizable().scaledToFit()
+                    HStack{
+                        Button(action: {
+                            // Navigate to the previous screen
+                            self.presentationMode.wrappedValue.dismiss()
+                        }, label: {
+                            Image(systemName: "chevron.left.circle.fill")
+                                .font(.largeTitle)
+                                .foregroundColor(.white)
+                        })
+                        Spacer()
+                        
+                        ZStack{
+                            
+                            Image(systemName: "square.and.arrow.up").scaleEffect(1.4)
+                                .frame(width: 40, height: 40).offset(y:-2)  .foregroundColor(.black)
+                                .foregroundColor(.white)
+                                
+                        }.background(Color(.white)).cornerRadius(500)
+                        
+                        
+                    }.padding(.horizontal, 20.0).offset(y:-60)
+                }
+                HStack{
+                    ZStack{
+                        
+                    Text("Color")
+                        .fontWeight(.light)
+                        .foregroundColor(Color(.black))
+                        .padding(.all, 15.0)
+                        .cornerRadius(20)
+                        .font(.custom("Helvetica Neue", size: 30))
+                    }
+                    Spacer()
+                    ZStack{
+                        Circle().foregroundColor(Color(.purple))
+                            .frame(width: 32.0, height: 32.0)
+                    }
+                }.padding(.horizontal, 20.0)
+                
+                VStack{
+                    Text("let alone used to indicate that something  far less likely or suitable than something  already mentioned: he was incapable of leading a bowling team,  alone a country. someone or something be stop interfering with someone or something:  him be—he knows what he wants.someone down gently")
+                    
+                }.padding(.horizontal)
+            }
+        }.edgesIgnoringSafeArea(.all)
+    }
+    
+}
+struct SavedItemView_Previews: PreviewProvider {
+    static var previews: some View {
+        SavedItemView(image: Image("3"))
+    }
+}
+
+
+
