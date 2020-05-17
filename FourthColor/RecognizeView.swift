@@ -291,6 +291,16 @@ class CameraViewController : UIViewController, AVCaptureVideoDataOutputSampleBuf
             self.currentColor = recognizedColor?.color
             self.currentColorName = recognizedColor?.name
             print(recognizedColor!.name)
+            self.uttered = false
+        }
+        if bottomSheetView!.currentTargetOffsetIndex == 1 && !self.uttered {
+            let utterance = AVSpeechUtterance(string: self.currentColorName!)
+            utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
+            utterance.rate = 0.4
+            
+            let synthesizer = AVSpeechSynthesizer()
+            synthesizer.speak(utterance)
+            self.uttered = true
         }
         print(bottomSheetView!.currentTargetOffsetIndex)
     }
@@ -309,6 +319,7 @@ class CameraViewController : UIViewController, AVCaptureVideoDataOutputSampleBuf
     var currentPhoto: UIImage? = nil
     var currentColor: UIColor? = nil
     var currentColorName: String? = nil
+    var uttered: Bool = false
     
     func loadCamera() {
         self.captureSession.sessionPreset = AVCaptureSession.Preset.hd1280x720

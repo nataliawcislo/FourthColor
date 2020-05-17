@@ -45,7 +45,6 @@ struct ContentView: View {
                         }
                     }.padding(.vertical, 10.0)
                     
-                    
                     VStack{
                         Button(action: {
                             //                           self.attribute.scrollToTop()
