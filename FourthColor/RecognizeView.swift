@@ -13,40 +13,57 @@ import FINNBottomSheet
 import CoreData
 
 struct RecognizeView: View {
-//    @ObservedObject var camera = CameraView()
+  //  @ObservedObject var camera = CameraView()
+    @Environment(\.presentationMode) var presentationMode
     
+    let defect: Defect
+      
     var body: some View {
-        ZStack {
-            CameraView()
-                .navigationBarTitle("")
-                .navigationBarHidden(true)
+
+        CameraView(defect: defect)
+               // .navigationBarTitle("")
+               // .navigationBarHidden(true)
                 .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
                 .edgesIgnoringSafeArea(.all)
-                .statusBar(hidden: true)
+               // .statusBar(hidden: true)
+      //  .edgesIgnoringSafeArea(.top)
+               .navigationBarBackButtonHidden(true)
+               .navigationBarItems(leading:
+                   Button(action: {
+                       // Navigate to the previous screen
+                       self.presentationMode.wrappedValue.dismiss()
+                   }, label: {
+                       Image(systemName: "chevron.left.circle.fill")
+                           .font(.largeTitle)
+                           .foregroundColor(.white)
+                   })
+               )
+        
 //            Text("test")
 //                .offset(CGSize(width: camera.getPoint()?.x ?? 0, height: camera.getPoint()?.y ?? 0))
-        }
+  
     }
 }
 
 
 struct RecogniseView_Previews: PreviewProvider {
     static var previews: some View {
-        RecognizeView()
+        RecognizeView(defect: defects[0])
     }
 }
 
 
 final class CameraView : UIViewControllerRepresentable, ObservableObject {
     @State var controller: CameraViewController? = nil
-    //    @Binding var position: CGPoint
     
-    //    func makeCoordinator() -> Coordinator {
-    //        return Coordinator(position: $position)
-    //    }
+    let defect: Defect
+    
+    init(defect: Defect) {
+        self.defect = defect
+    }
     
     func makeUIViewController(context: UIViewControllerRepresentableContext<CameraView>) -> UIViewController {
-        let controller = CameraViewController()
+        let controller = CameraViewController(filename: defect.filename)
         DispatchQueue.main.async {
             self.controller = controller
         }
@@ -71,7 +88,16 @@ let WIDTH = UIScreen.main.bounds.width
 let HEIGHT = UIScreen.main.bounds.height
 
 class CameraViewController : UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate {
-    let colors: ColorSet = ColorSet.new(fromFilename: "colors_small")!
+    init(filename: String) {
+        self.colors = ColorSet.new(fromFilename: filename)!
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    var colors: ColorSet
     
     let captureSession = AVCaptureSession()
     
@@ -117,6 +143,7 @@ class CameraViewController : UIViewController, AVCaptureVideoDataOutputSampleBuf
     let colorView = UIView()
     let colorLayer = CAShapeLayer()
     let labelLayer = CATextLayer()
+    let descriptionLayer = CATextLayer()
     
     let flashLayer = CAShapeLayer()
     
@@ -153,10 +180,19 @@ class CameraViewController : UIViewController, AVCaptureVideoDataOutputSampleBuf
         labelLayer.foregroundColor = UIColor.white.cgColor
         labelLayer.frame = CGRect(x: 50 + 5, y: 0, width: WIDTH - 50, height: 50)
         
+        descriptionLayer.position = view.center
+        descriptionLayer.contentsGravity = CALayerContentsGravity.resizeAspectFill
+        descriptionLayer.font = UIFont.systemFont(ofSize: 15, weight: UIFont.Weight.light)
+        descriptionLayer.fontSize = 18
+        descriptionLayer.foregroundColor = UIColor.white.cgColor
+        descriptionLayer.frame = CGRect(x: 10, y: 50, width: WIDTH - 10, height: HEIGHT)
+        descriptionLayer.isWrapped = true
+        
         colorView.backgroundColor = .black
         
         colorView.layer.addSublayer(colorLayer)
         colorView.layer.addSublayer(labelLayer)
+        colorView.layer.addSublayer(descriptionLayer)
         
         bottomSheetView = BottomSheetView(
             contentView: colorView,
@@ -251,6 +287,7 @@ class CameraViewController : UIViewController, AVCaptureVideoDataOutputSampleBuf
             let recognizedColor = self.colors.getNearest(from: color!)
             self.colorLayer.fillColor = recognizedColor?.color.cgColor
             self.labelLayer.string = recognizedColor?.name
+            self.descriptionLayer.string = recognizedColor?.description
             self.currentColor = recognizedColor?.color
             self.currentColorName = recognizedColor?.name
             print(recognizedColor!.name)

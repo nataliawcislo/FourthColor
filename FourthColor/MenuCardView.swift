@@ -17,7 +17,7 @@ struct MenuCardView: View {
         VStack(alignment: .leading){
             ForEach(defects, id: \.id) { defect in
                 ZStack{
-                    NavigationLink(destination: RecognizeView()){
+                    NavigationLink(destination: RecognizeView(defect: defect)){
                         RoundedRectangle(cornerRadius: 20)
                             .padding(.horizontal, -5.0)
                             .foregroundColor(Color("ColorCard"))

@@ -16,28 +16,46 @@ struct SavedGridView: View {
     
     var body: some View {
         ScrollView{
-            HStack{
-                VStack{
-                    Button(action: {
-                        // Navigate to the previous screen
-                        self.presentationMode.wrappedValue.dismiss()
-                    }, label: {
-                        Image(systemName: "chevron.left.circle.fill")
-                            .font(.largeTitle)
-                            .foregroundColor(.blue)
-                    })
-                }.offset(x:20)
-                Spacer()
-                ZStack{
-                    Text("Gallery")
-                        .fontWeight(.light).font(.custom("Helvetica Neue", size: 40)).padding(.top, 10.0)
-                }.offset(x:-150)
-            }
+//            HStack{
+//                VStack{
+//                    Button(action: {
+//                        // Navigate to the previous screen
+//                        self.presentationMode.wrappedValue.dismiss()
+//                    }, label: {
+//                        Image(systemName: "chevron.left.circle.fill")
+//                            .font(.largeTitle)
+//                            .foregroundColor(.blue)
+//                    })
+//                }.offset(x:20)
+//                Spacer()
+//                ZStack{
+//                    Text("Gallery")
+//                        .fontWeight(.light).font(.custom("Helvetica Neue", size: 40)).padding(.top, 10.0)
+//                }.offset(x:-150)
+//            }
+     
+            
+          
             VStack{
+               
                 GridView()
-            }.padding(.horizontal, 10.0)
+            }.padding(.all, 10.0)
             
         }
+        
+        .navigationBarTitle("Gallery")
+        .navigationBarBackButtonHidden(true)
+            .edgesIgnoringSafeArea(.top)
+        .navigationBarItems(leading:
+            Button(action: {
+                // Navigate to the previous screen
+                self.presentationMode.wrappedValue.dismiss()
+            }, label: {
+                Image(systemName: "chevron.left.circle.fill")
+                    .font(.largeTitle)
+                    .foregroundColor(.purple)
+            })
+        )
     }
 }
 

@@ -12,6 +12,7 @@ import SwiftUI
 struct NamedColor {
     let name: String
     let color: UIColor
+    let description: String
 }
 
 class ColorSet {
@@ -49,12 +50,13 @@ class ColorSet {
                 let r: Int = Int(components[1]) ?? 0
                 let g: Int = Int(components[2]) ?? 0
                 let b: Int = Int(components[3]) ?? 0
+                let description: String = String(components[4])
                 let value = (r << 16) + (g << 8) + b
                 let red = CGFloat(r) / 255.0
                 let green = CGFloat(g) / 255.0
                 let blue = CGFloat(b) / 255.0
                 let color = UIColor(red: red, green: green, blue: blue, alpha: 1.0)
-                let namedColor = NamedColor(name: name, color: color)
+                let namedColor = NamedColor(name: name, color: color, description: description)
                 let rgb = RGB(r: red, g: green, b: blue)
                 let hsl = toHSL(rgb: rgb)
                 self.sortedColors.append((value, namedColor, rgb, hsl))

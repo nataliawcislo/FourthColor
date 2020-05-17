@@ -57,14 +57,14 @@ struct SavedItemView: View {
                         }
                     }
                     HStack{
-                        Button(action: {
-                            // Navigate to the previous screen
-                            self.presentationMode.wrappedValue.dismiss()
-                        }, label: {
-                            Image(systemName: "chevron.left.circle.fill")
-                                .font(.largeTitle)
-                                .foregroundColor(.white)
-                        })
+//                        Button(action: {
+//                            // Navigate to the previous screen
+//                            self.presentationMode.wrappedValue.dismiss()
+//                        }, label: {
+//                            Image(systemName: "chevron.left.circle.fill")
+//                                .font(.largeTitle)
+//                                .foregroundColor(.white)
+//                        })
                         Spacer()
                         
                         ZStack{
@@ -76,7 +76,7 @@ struct SavedItemView: View {
                         }.background(Color(.white)).cornerRadius(500)
                         
                         
-                    }.padding(.horizontal, 20.0).offset(y:-60)
+                    }.padding(.horizontal, 20.0).offset(y:-130)
                 }
                 HStack{
                     ZStack{
@@ -101,7 +101,22 @@ struct SavedItemView: View {
                     
                 }.padding(.horizontal)
             }
-        }.edgesIgnoringSafeArea(.all)
+        }      .navigationBarTitle(photo.name!)
+        
+        
+        .navigationBarBackButtonHidden(true)
+      
+        .navigationBarItems(leading:
+            Button(action: {
+                // Navigate to the previous screen
+                self.presentationMode.wrappedValue.dismiss()
+            }, label: {
+                Image(systemName: "chevron.left.circle.fill")
+                    .font(.largeTitle)
+                    .foregroundColor(.white)
+            })
+        )
+        .edgesIgnoringSafeArea(.all)
     }
     
 }

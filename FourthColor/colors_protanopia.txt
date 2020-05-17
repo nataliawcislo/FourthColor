@@ -1,0 +1,3 @@
+Red;255;0;0;To jest czerwony
+Green;0;255;0;To ejst zielony
+Blue;0;0;255;To jest niebieski
