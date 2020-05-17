@@ -9,6 +9,7 @@
 import SwiftUI
 import AVFoundation
 import UIKit
+import FINNBottomSheet
 
 struct RecognizeView: View {
 //    @ObservedObject var camera = CameraView()
@@ -146,8 +147,17 @@ class CameraViewController : UIViewController, AVCaptureVideoDataOutputSampleBuf
         labelLayer.font = UIFont.systemFont(ofSize: 12, weight: UIFont.Weight.light)
         labelLayer.foregroundColor = UIColor.white.cgColor
         labelLayer.frame = CGRect(x: 50 + 5, y: HEIGHT - 50 + 3, width: WIDTH - 50, height: 50)
-
         view.layer.addSublayer(labelLayer)
+        
+        let contentView = UIView()
+        contentView.backgroundColor = .black
+        
+        let bottomSheetView = BottomSheetView(
+            contentView: contentView,
+            contentHeights: [100, 500]
+        )
+
+        bottomSheetView.present(in: self.view, targetIndex: 0)
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -174,7 +184,7 @@ class CameraViewController : UIViewController, AVCaptureVideoDataOutputSampleBuf
         self.labelLayer.string = recognizedColor?.name
         print(recognizedColor!.name)
     }
-    
+       
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()

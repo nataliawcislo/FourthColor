@@ -15,15 +15,15 @@ struct SavedItemView: View {
     
     let imageName: String
     func shareButton(){
-          isShare.toggle()
-          let image = UIImage(named: imageName)
-          let av = UIActivityViewController(activityItems: [image!], applicationActivities: nil)
-          
-          UIApplication.shared.windows.first?.rootViewController?.present(av, animated: true, completion: nil)
-      }
-
-      @State private var isShare = false
-      
+        isShare.toggle()
+        let image = UIImage(named: imageName)
+        let av = UIActivityViewController(activityItems: [image!], applicationActivities: nil)
+        
+        UIApplication.shared.windows.first?.rootViewController?.present(av, animated: true, completion: nil)
+    }
+    
+    @State private var isShare = false
+    
     var body: some View {
         ScrollView(){
             
@@ -55,9 +55,9 @@ struct SavedItemView: View {
                         
                         ZStack{
                             Button(action: shareButton ){
-                            Image(systemName: "square.and.arrow.up").scaleEffect(1.4)
-                                .frame(width: 40, height: 40).offset(y:-2)
-                                .foregroundColor(.black)
+                                Image(systemName: "square.and.arrow.up").scaleEffect(1.4)
+                                    .frame(width: 40, height: 40).offset(y:-2)
+                                    .foregroundColor(.black)
                             }
                         }.background(Color(.white)).cornerRadius(500)
                         
@@ -67,9 +67,9 @@ struct SavedItemView: View {
                 HStack{
                     ZStack{
                         
-                        Text("Color")
+                        Text("Color").foregroundColor(Color("ColorText"))
                             .fontWeight(.light)
-                            .foregroundColor(Color(.black))
+                            
                             .padding(.all, 15.0)
                             .cornerRadius(20)
                             .font(.custom("Helvetica Neue", size: 30))
@@ -83,6 +83,7 @@ struct SavedItemView: View {
                 
                 VStack{
                     Text("let alone used to indicate that something  far less likely or suitable than something  already mentioned: he was incapable of leading a bowling team,  alone a country. someone or something be stop interfering with someone or something:  him be—he knows what he wants.someone down gently")
+                        .foregroundColor(Color("ColorText"))
                     
                 }.padding(.horizontal)
             }

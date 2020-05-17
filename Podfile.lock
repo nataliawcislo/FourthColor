@@ -1,0 +1,21 @@
+PODS:
+  - FINNBottomSheet (4.2.0)
+
+DEPENDENCIES:
+  - FINNBottomSheet (from `https://github.com/finn-no/BottomSheet.git`)
+
+EXTERNAL SOURCES:
+  FINNBottomSheet:
+    :git: https://github.com/finn-no/BottomSheet.git
+
+CHECKOUT OPTIONS:
+  FINNBottomSheet:
+    :commit: 75d452a3221f508f7b4db3612fdfcdc1c5cddf33
+    :git: https://github.com/finn-no/BottomSheet.git
+
+SPEC CHECKSUMS:
+  FINNBottomSheet: 429cccf0ed60d3b24308e68c21ca4c1d84178eed
+
+PODFILE CHECKSUM: cb6a72752c850dc7d0f092bd3126da26689e12fc
+
+COCOAPODS: 1.9.1
