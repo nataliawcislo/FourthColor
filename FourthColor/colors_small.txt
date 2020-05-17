@@ -1,21 +1,21 @@
-White;255;255;255
-Bisque;194;162;112
-Grey;117;117;117
-Dirty White;250;246;242
-Silver;163;163;163
-Dark Gray;46;46;46
-Black;0;0;0
-Red;255;0;0
-Maroon;115;0;10
-Sun Yellow;245;232;39
-Light Yellow;255;247;128
-Green;50;205;50
-Dark Green;0;100;0
-Olive;128;128;0
-Aqua Blue;15;255;255
-Sea Blue;32;178;170
-Steel Blue;70;130;180
-Sky Blue;135;206;235
+White;255;255;255;White is the lightest color and is achromatic (having no hue). It is the color of fresh snow, chalk and milk, and is the opposite of black. White objects fully reflect and scatter all the visible wavelengths of light.\n\nThings with the same color:\nPiece of paper, tooth, bone, eye ball, golf ball
+Beige;194;162;112;Beige is variously described as a pale sandy fawn color, a grayish tan, a light-grayish yellowish brown, or a pale to grayish yellow. It takes its name from French, where the word originally meant natural wool that has been neither bleached nor dyed, hence also the color of natural wool.\nThings with the same color:\ncoats, shoes, purses, tights
+Grey;117;117;117;Gray is a cool, neutral, and balanced color. The color gray is an emotionless, moody color that is typically associated with meanings of dull, dirty, and dingy, as well as formal, conservative, and sophisticated. The color gray is a timeless and practical color that is often associated with loss or depression.\nThings with the same color:\nkoala, stones, paving stones,elephant
+Dirty White;250;246;242;Colder color than white.  a few tons lower than white but lighter than gray.  the angle of light is very important, thanks to which we can distinguish it from white or gray.\nThings with the same color:\n a lot of clothes, dishes, plastic elements, teeth with excess Fr in the body
+Silver;163;163;163;Silver or metallic gray is a color tone resembling gray that is a representation of the color of polished silver. The visual sensation usually associated with the metal silver is its metallic shine.\nThings with the same color:\nnail, screw, laptop, 2nd place medal, jewelry, metalic things
+Dark Gray;46;46;46;Tt is darker black and even darker than white. This color is approaching a shade of black. It's cold.\nThings with the same color:\nprecious stones, wall color, plastic elements, monn
+Black;0;0;0;Black is the darkest color, the result of the absence or complete absorption of visible light. It is an achromatic color, a color without hue, like white and gray. It is often used symbolically or figuratively to represent darkness, while white represents light.Black and white have often been used to describe opposites such as good and evil, the Dark Ages versus Age of Enlightenment, and night versus day.\nThings with the same color:\n elegant clothes, telephones, headphones, everyday clothes and shoes
+Red;255;0;0;Red is the color at the end of the visivke spectum of light, next to orange and opposite violet. It has a dominant wavelenght of approximately 625–740 nanometres.\nThings with the same color:\ntomato, blood, strawberry, sesame street Elmo
+Maroon;115;0;10;The color burgundy is similar to other shades of dark red such as maroon, cordovan, and oxblood, but differs from each of these in subtle ways. For example, cordovan, with its origin in equine shoe-leather, has a slightly fairer, lighter brown color; whilst oxblood, typically describing leather clothing, has a much richer red and a little more blue.\nThings with the same color:\na lot of elegant dresses, clothes, shoes, sweatshirts with school logos
+Sun Yellow;245;232;39;Yellow is the color between orange and green on the spectrum of visible light. It is evoked by light with a dominant wavelength of roughly 570–590 nm. It is a primary color in subtractive color systems, used in painting or color printing.\nThings with the same color:\ncheese, chicken, sun, lemon, banana, sunflower petals
+Light Yellow;255;247;128; It is lighter to yellow. Imagine if you mix white and yellow. He is softer.\nThings with the same color:\n hair bands, flip flops, t-shirts
+Green;50;205;50;Green is the color between blue and yellow on the visible spectrum. It is evoked by light which has a dominant wavelength of roughly 495–570 nm. In subtractive color systems, used in painting and color printing, it is created by a combination of yellow and blue, or yellow and cyan; in the RGB color model, used on television and computer screens, it is one of the additive primary colors, along with red and blue, which are mixed in different combinations to create all other colors.\nThings with the same color:\ncucumber, grass, stalk, leaf
+Dark Green;0;100;0; Darker shade of green. It is cooler than normal green. Approaching black. Dark green is quite popular humility; \nThings with the same color:\nleaves, plans, tents, sweatshirts, clothing for the army
+Olive;128;128;0; The specific color of green. More cool, darker than usual green but more yellow and brown in shade than black.\nThings with the same color:\nolives,
+Aqua Blue;15;255;255;Aqua (Latin for "water") is a greenish-blue color, a variation of the color cyan. The web color aqua is identical to the web color cyan, also sometimes called electric cyan, one of the three secondary colors of the RGB color model used on computer and television displays.\nThings with the same color:\n wather,
+Sea Blue;32;178;170;It is a darker shade of aqua blue and a darker shade of plain blue. You can imagine it as a darker water color, but it is brighter than dark blue and black.\nThings with the same color:\nsea, ocenas
+Steel Blue;70;130;180; One of the darker blue colors. It is brighter than dark blue and black. You can imagine him as a mixture of blue and gray than blue and black.\nThings with the same color:\n jeans, clothes, sports bags
+Sky Blue;135;206;235;
 Blue;0;191;255
 Dark Blue;0;0;139
 Rotten plum;63;37;69
@@ -25,14 +25,14 @@ Indigo;75;0;130
 Alice Blue;240;255;255
 Slate Blue;106;90;205
 Dark Orange;255;69;0
-Orange;255;140;0
+Orange;255;140;0;Orange is the colour between yellow and red on the spectrum of visible light. Human eyes perceive orange when observing light with a dominant wavelength between roughly 585 and 620 nanometres. In painting and traditional colour theory, it is a secondary colour of pigments, created by mixing yellow and red.\nThings with the same color:\norange, mandarin, pumpkin
 Light Orange;255;153;51
 Salmon;247;190;136
 Brown;139;69;19
 Dark Chocolate;36;22;0
 Light Pink;255;192;203
 Rose;255;227;227
-Pink;255;105;180
+Pink;255;105;180;Pink is a pale shade of red that is named after a flower of the same name. It was first used as a color name in the late 17th century.\nThings with the same color:\nflowers, clothes, decorative elements
 Deep Pink;255;20;147
 Pale Violet Red;219;112;147
 Gold;220;146;9

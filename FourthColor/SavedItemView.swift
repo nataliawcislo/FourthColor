@@ -13,13 +13,27 @@ import SwiftUI
 struct SavedItemView: View {
     @Environment(\.presentationMode) var presentationMode
     
-    let imageName: String
-    func shareButton(){
+    let photo: Photo
+    
+    func shareButton() {
         isShare.toggle()
-        let image = UIImage(named: imageName)
+        let image = UIImage(data: photo.image!)
         let av = UIActivityViewController(activityItems: [image!], applicationActivities: nil)
         
         UIApplication.shared.windows.first?.rootViewController?.present(av, animated: true, completion: nil)
+    }
+    
+    func image() -> UIImage {
+        return UIImage(data: photo.image!)!
+    }
+    
+    func UIColorFromRGB(rgbValue: Int32) -> UIColor {
+        return UIColor(
+            red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
+            green: CGFloat((rgbValue & 0x00FF00) >> 8) / 255.0,
+            blue: CGFloat(rgbValue & 0x0000FF) / 255.0,
+            alpha: CGFloat(1.0)
+        )
     }
     
     @State private var isShare = false
@@ -29,9 +43,9 @@ struct SavedItemView: View {
             
             VStack{
                 ZStack{
-                    Image(imageName).resizable().scaledToFit().contextMenu {
+                    Image(uiImage: image()).resizable().scaledToFit().contextMenu {
                         Button(action: {
-                            UIImageWriteToSavedPhotosAlbum(UIImage(named: self.imageName)!, nil, nil, nil)
+                            UIImageWriteToSavedPhotosAlbum(self.image(), nil, nil, nil)
                             
                         }){
                             HStack{
@@ -67,7 +81,7 @@ struct SavedItemView: View {
                 HStack{
                     ZStack{
                         
-                        Text("Color").foregroundColor(Color("ColorText"))
+                        Text(photo.name!).foregroundColor(Color("ColorText"))
                             .fontWeight(.light)
                             
                             .padding(.all, 15.0)
@@ -76,7 +90,7 @@ struct SavedItemView: View {
                     }
                     Spacer()
                     ZStack{
-                        Circle().foregroundColor(Color(.purple))
+                        Circle().foregroundColor(Color(UIColorFromRGB(rgbValue: photo.color)))
                             .frame(width: 32.0, height: 32.0)
                     }
                 }.padding(.horizontal, 20.0)
@@ -90,11 +104,6 @@ struct SavedItemView: View {
         }.edgesIgnoringSafeArea(.all)
     }
     
-}
-struct SavedItemView_Previews: PreviewProvider {
-    static var previews: some View {
-        SavedItemView(imageName: "1")
-    }
 }
 
 

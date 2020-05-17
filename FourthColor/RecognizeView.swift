@@ -10,6 +10,7 @@ import SwiftUI
 import AVFoundation
 import UIKit
 import FINNBottomSheet
+import CoreData
 
 struct RecognizeView: View {
 //    @ObservedObject var camera = CameraView()
@@ -105,15 +106,19 @@ class CameraViewController : UIViewController, AVCaptureVideoDataOutputSampleBuf
         
         DispatchQueue.main.async {
             self.previewLayer.contents = cgImage
+            self.currentPhoto = UIImage(cgImage: cgImage)
             self.updatePickersColor()
         }
     }
     
     let previewLayer = CALayer()
     let pickerLayer = CAShapeLayer()
-    let labelBackgroundLayer = CAShapeLayer()
+    var bottomSheetView: BottomSheetView? = nil
+    let colorView = UIView()
     let colorLayer = CAShapeLayer()
     let labelLayer = CATextLayer()
+    
+    let flashLayer = CAShapeLayer()
     
     func setupUI() {
         previewLayer.position = view.center
@@ -128,36 +133,50 @@ class CameraViewController : UIViewController, AVCaptureVideoDataOutputSampleBuf
         pickerLayer.frame = view.frame
         view.layer.addSublayer(pickerLayer)
         
-        labelBackgroundLayer.position = view.center
-        labelBackgroundLayer.contentsGravity = CALayerContentsGravity.resizeAspectFill
-        labelBackgroundLayer.fillColor = UIColor.black.cgColor
-        labelBackgroundLayer.frame = view.frame
-        let rect = CGRect(x: 0, y: HEIGHT - 50, width: WIDTH, height: 50)
-        labelBackgroundLayer.path = UIBezierPath(rect: rect).cgPath
-        view.layer.addSublayer(labelBackgroundLayer)
+//        labelBackgroundLayer.position = view.center
+//        labelBackgroundLayer.contentsGravity = CALayerContentsGravity.resizeAspectFill
+//        labelBackgroundLayer.fillColor = UIColor.black.cgColor
+//        labelBackgroundLayer.frame = view.frame
+//        let rect = CGRect(x: 0, y: HEIGHT - 50, width: WIDTH, height: 50)
+//        labelBackgroundLayer.path = UIBezierPath(rect: rect).cgPath
+//        view.layer.addSublayer(labelBackgroundLayer)
         
         colorLayer.position = view.center
         colorLayer.contentsGravity = CALayerContentsGravity.resizeAspectFill
         colorLayer.frame = view.frame
-        colorLayer.path = UIBezierPath(arcCenter: CGPoint(x: 25.0, y: HEIGHT - 25.0), radius: CGFloat(20), startAngle: CGFloat(0), endAngle: CGFloat(Double.pi * 2), clockwise: true).cgPath
-        view.layer.addSublayer(colorLayer)
+        colorLayer.path = UIBezierPath(arcCenter: CGPoint(x: 25.0, y: 15.0), radius: CGFloat(15), startAngle: CGFloat(0), endAngle: CGFloat(Double.pi * 2), clockwise: true).cgPath
         
         labelLayer.position = view.center
         labelLayer.contentsGravity = CALayerContentsGravity.resizeAspectFill
-        labelLayer.font = UIFont.systemFont(ofSize: 12, weight: UIFont.Weight.light)
+        labelLayer.font = UIFont.systemFont(ofSize: 15, weight: UIFont.Weight.light)
+        labelLayer.fontSize = 26
         labelLayer.foregroundColor = UIColor.white.cgColor
-        labelLayer.frame = CGRect(x: 50 + 5, y: HEIGHT - 50 + 3, width: WIDTH - 50, height: 50)
-        view.layer.addSublayer(labelLayer)
+        labelLayer.frame = CGRect(x: 50 + 5, y: 0, width: WIDTH - 50, height: 50)
         
-        let contentView = UIView()
-        contentView.backgroundColor = .black
+        colorView.backgroundColor = .black
         
-        let bottomSheetView = BottomSheetView(
-            contentView: contentView,
-            contentHeights: [100, 500]
+        colorView.layer.addSublayer(colorLayer)
+        colorView.layer.addSublayer(labelLayer)
+        
+        bottomSheetView = BottomSheetView(
+            contentView: colorView,
+            contentHeights: [50, HEIGHT]
         )
 
-        bottomSheetView.present(in: self.view, targetIndex: 0)
+        bottomSheetView!.present(in: self.view, targetIndex: 0, animated: false)
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(doubleTapped))
+        tap.numberOfTapsRequired = 2
+        view.addGestureRecognizer(tap)
+        
+        flashLayer.position = view.center
+        flashLayer.contentsGravity = CALayerContentsGravity.resizeAspectFill
+        flashLayer.fillColor = UIColor.black.cgColor
+        flashLayer.frame = view.frame
+        let rect = CGRect(x: 0, y: 0, width: WIDTH, height: HEIGHT)
+        flashLayer.path = UIBezierPath(rect: rect).cgPath
+        flashLayer.opacity = 0
+        view.layer.addSublayer(flashLayer)
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -166,6 +185,55 @@ class CameraViewController : UIViewController, AVCaptureVideoDataOutputSampleBuf
             self.pickerPosition = position
             updatePickersPosition()
             updatePickersColor()
+        }
+    }
+    
+    @objc func doubleTapped() {
+        let animation = CABasicAnimation(keyPath: #keyPath(CALayer.opacity))
+        animation.fromValue = 1.0
+        animation.toValue = 0.0
+        animation.duration = 0.2
+        animation.timingFunction = CAMediaTimingFunction(name: .linear)
+        flashLayer.add(animation, forKey: "fade")
+        
+        let name = self.currentColorName!
+        let imageData: Data = self.currentPhoto!.pngData()!
+        
+        var red: CGFloat = 0
+        var green: CGFloat = 0
+        var blue: CGFloat = 0
+        var alpha: CGFloat = 0
+        self.currentColor?.getRed(&red, green: &green, blue: &blue, alpha: &alpha)
+        let sred = Int(red * 255.0)
+        let sgreen = Int(red * 255.0)
+        let sblue = Int(red * 255.0)
+        let salpha = Int(red * 255.0)
+        let rgb: Int = (salpha << 24) + (sred << 16) + (sgreen << 8) + sblue
+        
+        savePhoto(name: name, image: imageData, color: rgb)
+    }
+    
+    func savePhoto(name: String, image: Data, color: Int) {
+      
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+            return
+        }
+          
+        let managedContext = appDelegate.persistentContainer.viewContext
+        let entity = NSEntityDescription.entity(forEntityName: "Photo", in: managedContext)!
+        let photo = NSManagedObject(entity: entity, insertInto: managedContext)
+        
+        print(name)
+        print(image)
+        print(color)
+        photo.setValue(name, forKeyPath: "name")
+        photo.setValue(image, forKeyPath: "image")
+        photo.setValue(color, forKeyPath: "color")
+        
+        do {
+            try managedContext.save()
+        } catch let error as NSError {
+            print("Could not save. \(error), \(error.userInfo)")
         }
     }
     
@@ -179,10 +247,15 @@ class CameraViewController : UIViewController, AVCaptureVideoDataOutputSampleBuf
     private func updatePickersColor() {
         let color = self.previewLayer.pickColor(at: self.pickerPosition!)
         self.pickerLayer.fillColor = color?.cgColor
-        let recognizedColor = self.colors.getNearest(from: color!)
-        self.colorLayer.fillColor = recognizedColor?.color.cgColor
-        self.labelLayer.string = recognizedColor?.name
-        print(recognizedColor!.name)
+        if bottomSheetView!.currentTargetOffsetIndex == 0 {
+            let recognizedColor = self.colors.getNearest(from: color!)
+            self.colorLayer.fillColor = recognizedColor?.color.cgColor
+            self.labelLayer.string = recognizedColor?.name
+            self.currentColor = recognizedColor?.color
+            self.currentColorName = recognizedColor?.name
+            print(recognizedColor!.name)
+        }
+        print(bottomSheetView!.currentTargetOffsetIndex)
     }
        
     override func viewDidLoad() {
@@ -195,6 +268,10 @@ class CameraViewController : UIViewController, AVCaptureVideoDataOutputSampleBuf
     let queue = DispatchQueue(label: "com.camera.video.queue")
     
     var pickerPosition: CGPoint? = CGPoint(x: WIDTH / 2, y: HEIGHT / 2)
+    
+    var currentPhoto: UIImage? = nil
+    var currentColor: UIColor? = nil
+    var currentColorName: String? = nil
     
     func loadCamera() {
         self.captureSession.sessionPreset = AVCaptureSession.Preset.hd1280x720
