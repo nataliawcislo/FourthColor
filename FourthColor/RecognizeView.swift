@@ -35,7 +35,7 @@ struct RecognizeView: View {
                    }, label: {
                        Image(systemName: "chevron.left.circle.fill")
                            .font(.largeTitle)
-                           .foregroundColor(.white)
+                        .foregroundColor(Color(.systemBlue))
                    })
                )
         

@@ -27,7 +27,6 @@ struct Info: View {
                     //name
                     Text(defect.name)
                         .fontWeight(.light)
-                        .foregroundColor(Color(.black))
                         .padding(.all, 15.0)
                         .cornerRadius(20)
                         .font(.custom("Helvetica Neue", size: 30))

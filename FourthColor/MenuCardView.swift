@@ -22,7 +22,7 @@ struct MenuCardView: View {
                             .padding(.horizontal, -5.0)
                             .foregroundColor(Color("ColorCard"))
                             .frame(height: 200.0)
-                            .shadow(color: Color(.black), radius: 3).opacity(1)
+                            .shadow(color: Color(.black), radius: 1).opacity(1)
                             .overlay(Text(defect.name).fontWeight(.light).font(.custom("Helvetica Neue", size: 34)).foregroundColor(Color("ColorTextCard")))
                             .contextMenu {
                                 VStack {

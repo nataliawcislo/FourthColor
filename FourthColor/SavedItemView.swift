@@ -42,7 +42,9 @@ struct SavedItemView: View {
         ScrollView(){
             
             VStack{
+               
                 ZStack{
+
                     Image(uiImage: image()).resizable().scaledToFit().contextMenu {
                         Button(action: {
                             UIImageWriteToSavedPhotosAlbum(self.image(), nil, nil, nil)
@@ -53,30 +55,36 @@ struct SavedItemView: View {
                                 Text("Save")
                                 Image(systemName: "arrow.down")
                             }
-                            
+                        }
+                        Button(action: shareButton
+                        ){
+                            HStack{
+                                Text("Share")
+                                Image(systemName: "square.and.arrow.up")
+                            }
                         }
                     }
-                    HStack{
-//                        Button(action: {
-//                            // Navigate to the previous screen
-//                            self.presentationMode.wrappedValue.dismiss()
-//                        }, label: {
-//                            Image(systemName: "chevron.left.circle.fill")
-//                                .font(.largeTitle)
-//                                .foregroundColor(.white)
-//                        })
-                        Spacer()
-                        
-                        ZStack{
-                            Button(action: shareButton ){
-                                Image(systemName: "square.and.arrow.up").scaleEffect(1.4)
-                                    .frame(width: 40, height: 40).offset(y:-2)
-                                    .foregroundColor(.black)
-                            }
-                        }.background(Color(.white)).cornerRadius(500)
-                        
-                        
-                    }.padding(.horizontal, 20.0).offset(y:-130)
+//                    HStack{
+//                        //                        Button(action: {
+//                        //                            // Navigate to the previous screen
+//                        //                            self.presentationMode.wrappedValue.dismiss()
+//                        //                        }, label: {
+//                        //                            Image(systemName: "chevron.left.circle.fill")
+//                        //                                .font(.largeTitle)
+//                        //                                .foregroundColor(.white)
+//                        //                        })
+//                        Spacer()
+//                        
+//                        ZStack{
+//                            Button(action: shareButton ){
+//                                Image(systemName: "square.and.arrow.up").scaleEffect(1.4)
+//                                    .frame(width: 40, height: 40).offset(y:-2)
+//                                    .foregroundColor(.black)
+//                            }
+//                        }.background(Color(.white)).cornerRadius(500)
+//                        
+//                        
+//                    }.padding(.horizontal, 20.0).offset(y:-130)
                 }
                 HStack{
                     ZStack{
@@ -101,22 +109,22 @@ struct SavedItemView: View {
                     
                 }.padding(.horizontal)
             }
-        }      .navigationBarTitle(photo.name!)
-        
-        
-        .navigationBarBackButtonHidden(true)
-      
-        .navigationBarItems(leading:
-            Button(action: {
-                // Navigate to the previous screen
-                self.presentationMode.wrappedValue.dismiss()
-            }, label: {
-                Image(systemName: "chevron.left.circle.fill")
-                    .font(.largeTitle)
-                    .foregroundColor(.white)
-            })
-        )
-        .edgesIgnoringSafeArea(.all)
+        }    //  .navigationBarTitle(photo.name!)
+            
+            
+            .navigationBarBackButtonHidden(true)
+            
+            .navigationBarItems(leading:
+                Button(action: {
+                    // Navigate to the previous screen
+                    self.presentationMode.wrappedValue.dismiss()
+                }, label: {
+                    Image(systemName: "chevron.left.circle.fill")
+                        .font(.largeTitle)
+                        .foregroundColor(Color(.systemBlue))
+                })
+            )
+            .edgesIgnoringSafeArea(.all)
     }
     
 }

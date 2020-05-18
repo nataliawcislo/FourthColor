@@ -27,6 +27,7 @@
 		7F8D47092470537B007E2184 /* NamedColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8D47082470537B007E2184 /* NamedColor.swift */; };
 		7F8D470B2470858F007E2184 /* colors_small.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7F8D470A2470858F007E2184 /* colors_small.txt */; };
 		7FB605E72471F43900DB0C37 /* colors_protanopia.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7FB605E62471F43900DB0C37 /* colors_protanopia.txt */; };
+		7FB605E92471FEF500DB0C37 /* Information.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB605E82471FEF500DB0C37 /* Information.swift */; };
 		818229B46105469254CD0EFC /* Pods_FourthColorTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65CC9C55A8A4BB30DEE6E86B /* Pods_FourthColorTests.framework */; };
 		BF1AB936344AD34EB24E6ED4 /* Pods_FourthColor_FourthColorUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0C1E49EDB8D0106182F3851 /* Pods_FourthColor_FourthColorUITests.framework */; };
 /* End PBXBuildFile section */
@@ -78,6 +79,7 @@
 		7F8D47082470537B007E2184 /* NamedColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamedColor.swift; sourceTree = "<group>"; };
 		7F8D470A2470858F007E2184 /* colors_small.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = colors_small.txt; sourceTree = "<group>"; };
 		7FB605E62471F43900DB0C37 /* colors_protanopia.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = colors_protanopia.txt; sourceTree = "<group>"; };
+		7FB605E82471FEF500DB0C37 /* Information.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Information.swift; sourceTree = "<group>"; };
 		952F05054E4FEF709849D9C4 /* Pods_FourthColor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FourthColor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C64A0F4F0AD3B24EC5CF2039 /* Pods-FourthColor-FourthColorUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FourthColor-FourthColorUITests.release.xcconfig"; path = "Target Support Files/Pods-FourthColor-FourthColorUITests/Pods-FourthColor-FourthColorUITests.release.xcconfig"; sourceTree = "<group>"; };
 		E0C1E49EDB8D0106182F3851 /* Pods_FourthColor_FourthColorUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FourthColor_FourthColorUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -166,6 +168,7 @@
 				7F579529246FF53000058B12 /* Info.swift */,
 				7F8D47082470537B007E2184 /* NamedColor.swift */,
 				7FB605E62471F43900DB0C37 /* colors_protanopia.txt */,
+				7FB605E82471FEF500DB0C37 /* Information.swift */,
 			);
 			path = FourthColor;
 			sourceTree = "<group>";
@@ -457,6 +460,7 @@
 				7F579519246FD73300058B12 /* Defect.swift in Sources */,
 				7F579523246FDA0700058B12 /* SavedItemView.swift in Sources */,
 				7F5794E6246FD69F00058B12 /* AppDelegate.swift in Sources */,
+				7FB605E92471FEF500DB0C37 /* Information.swift in Sources */,
 				7F5794EB246FD69F00058B12 /* FourthColor.xcdatamodeld in Sources */,
 				7F5794ED246FD69F00058B12 /* ContentView.swift in Sources */,
 				7F57952A246FF53000058B12 /* Info.swift in Sources */,
