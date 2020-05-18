@@ -27,12 +27,12 @@ struct SavedItemView: View {
         return UIImage(data: photo.image!)!
     }
     
-    func UIColorFromRGB(rgbValue: Int32) -> UIColor {
+    func UIColorFromRGB(rgbValue: Int64) -> UIColor {
         return UIColor(
-            red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
-            green: CGFloat((rgbValue & 0x00FF00) >> 8) / 255.0,
-            blue: CGFloat(rgbValue & 0x0000FF) / 255.0,
-            alpha: CGFloat(1.0)
+            red: CGFloat((rgbValue & 0x00FF0000) >> 16) / 255.0,
+            green: CGFloat((rgbValue & 0x0000FF00) >> 8) / 255.0,
+            blue: CGFloat(rgbValue & 0x000000FF) / 255.0,
+            alpha: CGFloat((rgbValue & 0xFF000000) >> 24) / 255.0
         )
     }
     
@@ -104,7 +104,7 @@ struct SavedItemView: View {
                 }.padding(.horizontal, 20.0)
                 
                 VStack{
-                    Text("let alone used to indicate that something  far less likely or suitable than something  already mentioned: he was incapable of leading a bowling team,  alone a country. someone or something be stop interfering with someone or something:  him be—he knows what he wants.someone down gently")
+                    Text(photo.color_description!)
                         .foregroundColor(Color("ColorText"))
                     
                 }.padding(.horizontal)

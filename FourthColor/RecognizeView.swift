@@ -234,22 +234,24 @@ class CameraViewController : UIViewController, AVCaptureVideoDataOutputSampleBuf
         
         let name = self.currentColorName!
         let imageData: Data = self.currentPhoto!.pngData()!
+        let description: String = self.currentColorDescription!
         
         var red: CGFloat = 0
         var green: CGFloat = 0
         var blue: CGFloat = 0
         var alpha: CGFloat = 0
         self.currentColor?.getRed(&red, green: &green, blue: &blue, alpha: &alpha)
-        let sred = Int(red * 255.0)
-        let sgreen = Int(red * 255.0)
-        let sblue = Int(red * 255.0)
-        let salpha = Int(red * 255.0)
-        let rgb: Int = (salpha << 24) + (sred << 16) + (sgreen << 8) + sblue
+        let sred = Int64(red * 255.0)
+        let sgreen = Int64(green * 255.0)
+        let sblue = Int64(blue * 255.0)
+        let salpha = Int64(alpha * 255.0)
+        print("\(salpha) \(sred) \(green) \(sblue)")
+        let rgb: Int64 = (salpha << 24) + (sred << 16) + (sgreen << 8) + sblue
         
-        savePhoto(name: name, image: imageData, color: rgb)
+        savePhoto(name: name, image: imageData, color: rgb, description: description)
     }
     
-    func savePhoto(name: String, image: Data, color: Int) {
+    func savePhoto(name: String, image: Data, color: Int64, description: String) {
       
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
             return
@@ -265,6 +267,7 @@ class CameraViewController : UIViewController, AVCaptureVideoDataOutputSampleBuf
         photo.setValue(name, forKeyPath: "name")
         photo.setValue(image, forKeyPath: "image")
         photo.setValue(color, forKeyPath: "color")
+        photo.setValue(description, forKeyPath: "color_description")
         
         do {
             try managedContext.save()
@@ -275,9 +278,6 @@ class CameraViewController : UIViewController, AVCaptureVideoDataOutputSampleBuf
     
     private func updatePickersPosition() {
         self.pickerLayer.path = UIBezierPath(arcCenter: self.pickerPosition!, radius: CGFloat(20), startAngle: CGFloat(0), endAngle: CGFloat(Double.pi * 2), clockwise: true).cgPath
-        
-//        let rect = CGRect(x: position.x + 20, y: position.y - 20, width: 100, height: 20)
-//        self.labelBackgroundLayer.path = UIBezierPath(roundedRect: rect, cornerRadius: 5).cgPath
     }
     
     private func updatePickersColor() {
@@ -290,6 +290,7 @@ class CameraViewController : UIViewController, AVCaptureVideoDataOutputSampleBuf
             self.descriptionLayer.string = recognizedColor?.description
             self.currentColor = recognizedColor?.color
             self.currentColorName = recognizedColor?.name
+            self.currentColorDescription = recognizedColor?.description
             print(recognizedColor!.name)
             self.uttered = false
         }
@@ -319,6 +320,7 @@ class CameraViewController : UIViewController, AVCaptureVideoDataOutputSampleBuf
     var currentPhoto: UIImage? = nil
     var currentColor: UIColor? = nil
     var currentColorName: String? = nil
+    var currentColorDescription: String? = nil
     var uttered: Bool = false
     
     func loadCamera() {
