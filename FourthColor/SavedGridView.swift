@@ -60,41 +60,25 @@ struct SavedGridView: View {
     }
 }
 
-
 struct SavedGridView_Previews: PreviewProvider {
     static var previews: some View {
         SavedGridView()
     }
 }
 
-
-
-
 struct GridView: View {
-    //pobieranie wszytskich zdj z bazki
-    func fetchPhotos() -> [Photo] {
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
-            return []
-        }
-        let managedContext = appDelegate.persistentContainer.viewContext
-        do {
-            let req = NSFetchRequest<Photo>(entityName: "Photo")
-            let photos = try managedContext.fetch(req)
-            return photos
-        } catch {
-            return []
-        }
-    }
-    
     let col = 2
+    
     var body: some View {
         var grid: [[Int]] = []
-        let photos: [Photo] = fetchPhotos()
-        print(photos)
+        let photoConnection = PhotoConnection()
+        let photos: [Photo] = photoConnection.fetchPhotos()
+        
         _ = (0..<photos.count).publisher
             .collect(col)
             .collect()
             .sink(receiveValue: { grid = $0 })
+        
         return ForEach(0..<grid.count, id: \.self) { collect in
             HStack {
                 ForEach(grid[collect], id: \.self) { number in
@@ -111,14 +95,3 @@ struct GridView: View {
         }
     }
 }
-
-//let listImage: [SavedPhoto] = [
-//    SavedPhoto(color: "Donut_Animal", image: 1),
-//    SavedPhoto(color: "Donut_Blue",  image: 2),
-//    SavedPhoto(color: "Donut_BluePink",  image: 3),
-//    SavedPhoto(color: "Donut_Cat",  image: 4),
-//    SavedPhoto(color: "Donut_Christmas",  image: 5),
-//    SavedPhoto(color: "Donut_Color",  image: 6),
-//    SavedPhoto(color: "Donut_Colorfull",  image: 7 ),
-//    SavedPhoto(color: "Donut_Dark",  image: 8)]
-

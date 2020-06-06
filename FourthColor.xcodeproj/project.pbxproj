@@ -11,6 +11,7 @@
 		7F55908B2472AF1000290B09 /* colors_protanopia.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7F55908A2472AF1000290B09 /* colors_protanopia.txt */; };
 		7F55908D2472B00C00290B09 /* colors_tritanopia.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7F55908C2472B00C00290B09 /* colors_tritanopia.txt */; };
 		7F56AA49248C124600EDFC22 /* FourthColorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F56AA48248C124600EDFC22 /* FourthColorUITests.swift */; };
+		7F56AA51248C2FFD00EDFC22 /* PhotoConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F56AA50248C2FFD00EDFC22 /* PhotoConnection.swift */; };
 		7F5794E6246FD69F00058B12 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5794E5246FD69F00058B12 /* AppDelegate.swift */; };
 		7F5794E8246FD69F00058B12 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5794E7246FD69F00058B12 /* SceneDelegate.swift */; };
 		7F5794EB246FD69F00058B12 /* FourthColor.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7F5794E9246FD69F00058B12 /* FourthColor.xcdatamodeld */; };
@@ -59,6 +60,7 @@
 		7F56AA46248C124600EDFC22 /* FourthColorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FourthColorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F56AA48248C124600EDFC22 /* FourthColorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourthColorUITests.swift; sourceTree = "<group>"; };
 		7F56AA4A248C124600EDFC22 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7F56AA50248C2FFD00EDFC22 /* PhotoConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoConnection.swift; sourceTree = "<group>"; };
 		7F5794E2246FD69F00058B12 /* FourthColor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FourthColor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F5794E5246FD69F00058B12 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7F5794E7246FD69F00058B12 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -179,6 +181,7 @@
 				7FB605E82471FEF500DB0C37 /* Information.swift */,
 				7F55908A2472AF1000290B09 /* colors_protanopia.txt */,
 				7F55908C2472B00C00290B09 /* colors_tritanopia.txt */,
+				7F56AA50248C2FFD00EDFC22 /* PhotoConnection.swift */,
 			);
 			path = FourthColor;
 			sourceTree = "<group>";
@@ -428,6 +431,7 @@
 				7F579525246FDA2000058B12 /* SavedGridView.swift in Sources */,
 				7F579519246FD73300058B12 /* Defect.swift in Sources */,
 				7F579523246FDA0700058B12 /* SavedItemView.swift in Sources */,
+				7F56AA51248C2FFD00EDFC22 /* PhotoConnection.swift in Sources */,
 				7F5794E6246FD69F00058B12 /* AppDelegate.swift in Sources */,
 				7FB605E92471FEF500DB0C37 /* Information.swift in Sources */,
 				7F5794EB246FD69F00058B12 /* FourthColor.xcdatamodeld in Sources */,

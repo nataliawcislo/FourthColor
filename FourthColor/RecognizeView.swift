@@ -248,32 +248,8 @@ class CameraViewController : UIViewController, AVCaptureVideoDataOutputSampleBuf
         print("\(salpha) \(sred) \(green) \(sblue)")
         let rgb: Int64 = (salpha << 24) + (sred << 16) + (sgreen << 8) + sblue
         
-        savePhoto(name: name, image: imageData, color: rgb, description: description)
-    }
-//baza
-    func savePhoto(name: String, image: Data, color: Int64, description: String) {
-      
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
-            return
-        }
-          
-        let managedContext = appDelegate.persistentContainer.viewContext
-        let entity = NSEntityDescription.entity(forEntityName: "Photo", in: managedContext)!
-        let photo = NSManagedObject(entity: entity, insertInto: managedContext)
-        
-        print(name)
-        print(image)
-        print(color)
-        photo.setValue(name, forKeyPath: "name")
-        photo.setValue(image, forKeyPath: "image")
-        photo.setValue(color, forKeyPath: "color")
-        photo.setValue(description, forKeyPath: "color_description")
-        
-        do {
-            try managedContext.save()
-        } catch let error as NSError {
-            print("Could not save. \(error), \(error.userInfo)")
-        }
+        let photoConnection = PhotoConnection()
+        photoConnection.insertPhoto(name: name, image: imageData, color: rgb, description: description)
     }
     
     private func updatePickersPosition() {
