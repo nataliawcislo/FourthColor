@@ -12,6 +12,8 @@
 		7F55908D2472B00C00290B09 /* colors_tritanopia.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7F55908C2472B00C00290B09 /* colors_tritanopia.txt */; };
 		7F56AA49248C124600EDFC22 /* FourthColorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F56AA48248C124600EDFC22 /* FourthColorUITests.swift */; };
 		7F56AA51248C2FFD00EDFC22 /* PhotoConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F56AA50248C2FFD00EDFC22 /* PhotoConnection.swift */; };
+		7F56AA61248C49B400EDFC22 /* PhotoConnectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F56AA60248C49B400EDFC22 /* PhotoConnectionTests.swift */; };
+		7F56AA63248C4AD700EDFC22 /* RecognitionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F56AA62248C4AD700EDFC22 /* RecognitionTests.swift */; };
 		7F5794E6246FD69F00058B12 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5794E5246FD69F00058B12 /* AppDelegate.swift */; };
 		7F5794E8246FD69F00058B12 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5794E7246FD69F00058B12 /* SceneDelegate.swift */; };
 		7F5794EB246FD69F00058B12 /* FourthColor.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7F5794E9246FD69F00058B12 /* FourthColor.xcdatamodeld */; };
@@ -19,7 +21,6 @@
 		7F5794EF246FD6A000058B12 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F5794EE246FD6A000058B12 /* Assets.xcassets */; };
 		7F5794F2246FD6A000058B12 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F5794F1246FD6A000058B12 /* Preview Assets.xcassets */; };
 		7F5794F5246FD6A000058B12 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F5794F3246FD6A000058B12 /* LaunchScreen.storyboard */; };
-		7F579500246FD6A100058B12 /* FourthColorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5794FF246FD6A100058B12 /* FourthColorTests.swift */; };
 		7F579519246FD73300058B12 /* Defect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F579518246FD73300058B12 /* Defect.swift */; };
 		7F57951F246FD99600058B12 /* MenuCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F57951E246FD99600058B12 /* MenuCardView.swift */; };
 		7F579523246FDA0700058B12 /* SavedItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F579522246FDA0700058B12 /* SavedItemView.swift */; };
@@ -61,6 +62,8 @@
 		7F56AA48248C124600EDFC22 /* FourthColorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourthColorUITests.swift; sourceTree = "<group>"; };
 		7F56AA4A248C124600EDFC22 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7F56AA50248C2FFD00EDFC22 /* PhotoConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoConnection.swift; sourceTree = "<group>"; };
+		7F56AA60248C49B400EDFC22 /* PhotoConnectionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoConnectionTests.swift; sourceTree = "<group>"; };
+		7F56AA62248C4AD700EDFC22 /* RecognitionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecognitionTests.swift; sourceTree = "<group>"; };
 		7F5794E2246FD69F00058B12 /* FourthColor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FourthColor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F5794E5246FD69F00058B12 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7F5794E7246FD69F00058B12 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -71,7 +74,6 @@
 		7F5794F4246FD6A000058B12 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7F5794F6246FD6A000058B12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7F5794FB246FD6A100058B12 /* FourthColorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FourthColorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		7F5794FF246FD6A100058B12 /* FourthColorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourthColorTests.swift; sourceTree = "<group>"; };
 		7F579501246FD6A100058B12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7F579518246FD73300058B12 /* Defect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defect.swift; sourceTree = "<group>"; };
 		7F57951E246FD99600058B12 /* MenuCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCardView.swift; sourceTree = "<group>"; };
@@ -197,8 +199,9 @@
 		7F5794FE246FD6A100058B12 /* FourthColorTests */ = {
 			isa = PBXGroup;
 			children = (
-				7F5794FF246FD6A100058B12 /* FourthColorTests.swift */,
 				7F579501246FD6A100058B12 /* Info.plist */,
+				7F56AA60248C49B400EDFC22 /* PhotoConnectionTests.swift */,
+				7F56AA62248C4AD700EDFC22 /* RecognitionTests.swift */,
 			);
 			path = FourthColorTests;
 			sourceTree = "<group>";
@@ -446,7 +449,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7F579500246FD6A100058B12 /* FourthColorTests.swift in Sources */,
+				7F56AA61248C49B400EDFC22 /* PhotoConnectionTests.swift in Sources */,
+				7F56AA63248C4AD700EDFC22 /* RecognitionTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
