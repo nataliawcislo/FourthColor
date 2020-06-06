@@ -104,7 +104,7 @@ class CameraViewController : UIViewController, AVCaptureVideoDataOutputSampleBuf
     var backFacingCamera: AVCaptureDevice?
     
     var currentDevice: AVCaptureDevice?
-    
+// obraz z ekranu
     func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
         connection.videoOrientation = AVCaptureVideoOrientation.portrait
         guard let imageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else {
@@ -223,7 +223,7 @@ class CameraViewController : UIViewController, AVCaptureVideoDataOutputSampleBuf
             updatePickersColor()
         }
     }
-    
+//zdj robienie zapisywanie
     @objc func doubleTapped() {
         let animation = CABasicAnimation(keyPath: #keyPath(CALayer.opacity))
         animation.fromValue = 1.0
@@ -250,7 +250,7 @@ class CameraViewController : UIViewController, AVCaptureVideoDataOutputSampleBuf
         
         savePhoto(name: name, image: imageData, color: rgb, description: description)
     }
-    
+//baza
     func savePhoto(name: String, image: Data, color: Int64, description: String) {
       
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
@@ -385,6 +385,7 @@ struct DetectorView: View {
     }
 }
 
+//pobiera konkretny piksel z ekranu
 public extension CALayer {
     func pickColor(at position: CGPoint) -> UIColor? {
         

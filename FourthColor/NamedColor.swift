@@ -15,7 +15,9 @@ struct NamedColor {
     let description: String
 }
 
+//wykrywa kolor najblizszy
 class ColorSet {
+    //kolory ktore mam, zbior
     var sortedColors: [(Int, NamedColor, RGB, HSL)]
     
     struct RGB {
@@ -116,7 +118,8 @@ class ColorSet {
         let blue = components![2]
         return getNearest(rgb: RGB(r: red, g: green, b: blue))
     }
-    
+//przypisywanie kolor do najblizszego
+//liczy odleglosc miedzy kolorami
     private func getNearest(rgb: RGB) -> NamedColor? {
         let hsl = toHSL(rgb: rgb)
         let f = { (x: (Int, NamedColor, RGB, HSL)) -> CGFloat in

@@ -107,7 +107,7 @@ struct SavedItemView: View {
                     Text(photo.color_description!)
                         .foregroundColor(Color("ColorText"))
                     
-                }.padding(.horizontal)
+                }.padding(.horizontal).padding(.bottom, 20)
             }
         }    //  .navigationBarTitle(photo.name!)
             
@@ -128,6 +128,3 @@ struct SavedItemView: View {
     }
     
 }
-
-
-

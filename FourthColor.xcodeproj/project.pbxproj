@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		595F42855BC3A9CCEA237924 /* Pods_FourthColor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 952F05054E4FEF709849D9C4 /* Pods_FourthColor.framework */; };
+		7F55908B2472AF1000290B09 /* colors_protanopia.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7F55908A2472AF1000290B09 /* colors_protanopia.txt */; };
+		7F55908D2472B00C00290B09 /* colors_tritanopia.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7F55908C2472B00C00290B09 /* colors_tritanopia.txt */; };
+		7F56AA49248C124600EDFC22 /* FourthColorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F56AA48248C124600EDFC22 /* FourthColorUITests.swift */; };
 		7F5794E6246FD69F00058B12 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5794E5246FD69F00058B12 /* AppDelegate.swift */; };
 		7F5794E8246FD69F00058B12 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5794E7246FD69F00058B12 /* SceneDelegate.swift */; };
 		7F5794EB246FD69F00058B12 /* FourthColor.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7F5794E9246FD69F00058B12 /* FourthColor.xcdatamodeld */; };
@@ -16,31 +19,28 @@
 		7F5794F2246FD6A000058B12 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F5794F1246FD6A000058B12 /* Preview Assets.xcassets */; };
 		7F5794F5246FD6A000058B12 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F5794F3246FD6A000058B12 /* LaunchScreen.storyboard */; };
 		7F579500246FD6A100058B12 /* FourthColorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5794FF246FD6A100058B12 /* FourthColorTests.swift */; };
-		7F57950B246FD6A100058B12 /* FourthColorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F57950A246FD6A100058B12 /* FourthColorUITests.swift */; };
 		7F579519246FD73300058B12 /* Defect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F579518246FD73300058B12 /* Defect.swift */; };
-		7F57951D246FD92200058B12 /* colors.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7F57951C246FD92200058B12 /* colors.txt */; };
 		7F57951F246FD99600058B12 /* MenuCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F57951E246FD99600058B12 /* MenuCardView.swift */; };
 		7F579523246FDA0700058B12 /* SavedItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F579522246FDA0700058B12 /* SavedItemView.swift */; };
 		7F579525246FDA2000058B12 /* SavedGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F579524246FDA2000058B12 /* SavedGridView.swift */; };
 		7F579527246FDA3500058B12 /* RecognizeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F579526246FDA3500058B12 /* RecognizeView.swift */; };
 		7F57952A246FF53000058B12 /* Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F579529246FF53000058B12 /* Info.swift */; };
 		7F8D47092470537B007E2184 /* NamedColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8D47082470537B007E2184 /* NamedColor.swift */; };
-		7F8D470B2470858F007E2184 /* colors_small.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7F8D470A2470858F007E2184 /* colors_small.txt */; };
-		7FB605E72471F43900DB0C37 /* colors_protanopia.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7FB605E62471F43900DB0C37 /* colors_protanopia.txt */; };
+		7F8D470B2470858F007E2184 /* colors_original.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7F8D470A2470858F007E2184 /* colors_original.txt */; };
+		7FB605E72471F43900DB0C37 /* colors_acromatopia.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7FB605E62471F43900DB0C37 /* colors_acromatopia.txt */; };
 		7FB605E92471FEF500DB0C37 /* Information.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB605E82471FEF500DB0C37 /* Information.swift */; };
 		818229B46105469254CD0EFC /* Pods_FourthColorTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65CC9C55A8A4BB30DEE6E86B /* Pods_FourthColorTests.framework */; };
-		BF1AB936344AD34EB24E6ED4 /* Pods_FourthColor_FourthColorUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0C1E49EDB8D0106182F3851 /* Pods_FourthColor_FourthColorUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		7F5794FC246FD6A100058B12 /* PBXContainerItemProxy */ = {
+		7F56AA4B248C124600EDFC22 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 7F5794DA246FD69F00058B12 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 7F5794E1246FD69F00058B12;
 			remoteInfo = FourthColor;
 		};
-		7F579507246FD6A100058B12 /* PBXContainerItemProxy */ = {
+		7F5794FC246FD6A100058B12 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 7F5794DA246FD69F00058B12 /* Project object */;
 			proxyType = 1;
@@ -54,6 +54,11 @@
 		6B9DE037223E7A226EC8110C /* Pods-FourthColor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FourthColor.release.xcconfig"; path = "Target Support Files/Pods-FourthColor/Pods-FourthColor.release.xcconfig"; sourceTree = "<group>"; };
 		6DB3A1F81448DDE6480654EC /* Pods-FourthColor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FourthColor.debug.xcconfig"; path = "Target Support Files/Pods-FourthColor/Pods-FourthColor.debug.xcconfig"; sourceTree = "<group>"; };
 		7CC69609A7370076496C743F /* Pods-FourthColorTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FourthColorTests.release.xcconfig"; path = "Target Support Files/Pods-FourthColorTests/Pods-FourthColorTests.release.xcconfig"; sourceTree = "<group>"; };
+		7F55908A2472AF1000290B09 /* colors_protanopia.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = colors_protanopia.txt; sourceTree = "<group>"; };
+		7F55908C2472B00C00290B09 /* colors_tritanopia.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = colors_tritanopia.txt; sourceTree = "<group>"; };
+		7F56AA46248C124600EDFC22 /* FourthColorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FourthColorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7F56AA48248C124600EDFC22 /* FourthColorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourthColorUITests.swift; sourceTree = "<group>"; };
+		7F56AA4A248C124600EDFC22 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7F5794E2246FD69F00058B12 /* FourthColor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FourthColor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F5794E5246FD69F00058B12 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7F5794E7246FD69F00058B12 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,19 +71,15 @@
 		7F5794FB246FD6A100058B12 /* FourthColorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FourthColorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F5794FF246FD6A100058B12 /* FourthColorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourthColorTests.swift; sourceTree = "<group>"; };
 		7F579501246FD6A100058B12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7F579506246FD6A100058B12 /* FourthColorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FourthColorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		7F57950A246FD6A100058B12 /* FourthColorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourthColorUITests.swift; sourceTree = "<group>"; };
-		7F57950C246FD6A100058B12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7F579518246FD73300058B12 /* Defect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defect.swift; sourceTree = "<group>"; };
-		7F57951C246FD92200058B12 /* colors.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = colors.txt; sourceTree = "<group>"; };
 		7F57951E246FD99600058B12 /* MenuCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCardView.swift; sourceTree = "<group>"; };
 		7F579522246FDA0700058B12 /* SavedItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedItemView.swift; sourceTree = "<group>"; };
 		7F579524246FDA2000058B12 /* SavedGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedGridView.swift; sourceTree = "<group>"; };
 		7F579526246FDA3500058B12 /* RecognizeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecognizeView.swift; sourceTree = "<group>"; };
 		7F579529246FF53000058B12 /* Info.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Info.swift; sourceTree = "<group>"; };
 		7F8D47082470537B007E2184 /* NamedColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamedColor.swift; sourceTree = "<group>"; };
-		7F8D470A2470858F007E2184 /* colors_small.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = colors_small.txt; sourceTree = "<group>"; };
-		7FB605E62471F43900DB0C37 /* colors_protanopia.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = colors_protanopia.txt; sourceTree = "<group>"; };
+		7F8D470A2470858F007E2184 /* colors_original.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = colors_original.txt; sourceTree = "<group>"; };
+		7FB605E62471F43900DB0C37 /* colors_acromatopia.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = colors_acromatopia.txt; sourceTree = "<group>"; };
 		7FB605E82471FEF500DB0C37 /* Information.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Information.swift; sourceTree = "<group>"; };
 		952F05054E4FEF709849D9C4 /* Pods_FourthColor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FourthColor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C64A0F4F0AD3B24EC5CF2039 /* Pods-FourthColor-FourthColorUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FourthColor-FourthColorUITests.release.xcconfig"; path = "Target Support Files/Pods-FourthColor-FourthColorUITests/Pods-FourthColor-FourthColorUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -88,6 +89,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		7F56AA43248C124600EDFC22 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7F5794DF246FD69F00058B12 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -104,14 +112,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7F579503246FD6A100058B12 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				BF1AB936344AD34EB24E6ED4 /* Pods_FourthColor_FourthColorUITests.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -125,12 +125,21 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		7F56AA47248C124600EDFC22 /* FourthColorUITests */ = {
+			isa = PBXGroup;
+			children = (
+				7F56AA48248C124600EDFC22 /* FourthColorUITests.swift */,
+				7F56AA4A248C124600EDFC22 /* Info.plist */,
+			);
+			path = FourthColorUITests;
+			sourceTree = "<group>";
+		};
 		7F5794D9246FD69F00058B12 = {
 			isa = PBXGroup;
 			children = (
 				7F5794E4246FD69F00058B12 /* FourthColor */,
 				7F5794FE246FD6A100058B12 /* FourthColorTests */,
-				7F579509246FD6A100058B12 /* FourthColorUITests */,
+				7F56AA47248C124600EDFC22 /* FourthColorUITests */,
 				7F5794E3246FD69F00058B12 /* Products */,
 				D33160D8EFA7379C937B4FBC /* Pods */,
 				661DDE14B9C21D14C465FCF9 /* Frameworks */,
@@ -142,7 +151,7 @@
 			children = (
 				7F5794E2246FD69F00058B12 /* FourthColor.app */,
 				7F5794FB246FD6A100058B12 /* FourthColorTests.xctest */,
-				7F579506246FD6A100058B12 /* FourthColorUITests.xctest */,
+				7F56AA46248C124600EDFC22 /* FourthColorUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -151,8 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				7F579522246FDA0700058B12 /* SavedItemView.swift */,
-				7F57951C246FD92200058B12 /* colors.txt */,
-				7F8D470A2470858F007E2184 /* colors_small.txt */,
+				7F8D470A2470858F007E2184 /* colors_original.txt */,
 				7F5794E5246FD69F00058B12 /* AppDelegate.swift */,
 				7F5794E7246FD69F00058B12 /* SceneDelegate.swift */,
 				7F5794EC246FD69F00058B12 /* ContentView.swift */,
@@ -162,13 +170,15 @@
 				7F5794E9246FD69F00058B12 /* FourthColor.xcdatamodeld */,
 				7F5794F0246FD6A000058B12 /* Preview Content */,
 				7F579518246FD73300058B12 /* Defect.swift */,
-				7F57951E246FD99600058B12 /* MenuCardView.swift */,
 				7F579524246FDA2000058B12 /* SavedGridView.swift */,
+				7F57951E246FD99600058B12 /* MenuCardView.swift */,
 				7F579526246FDA3500058B12 /* RecognizeView.swift */,
 				7F579529246FF53000058B12 /* Info.swift */,
 				7F8D47082470537B007E2184 /* NamedColor.swift */,
-				7FB605E62471F43900DB0C37 /* colors_protanopia.txt */,
+				7FB605E62471F43900DB0C37 /* colors_acromatopia.txt */,
 				7FB605E82471FEF500DB0C37 /* Information.swift */,
+				7F55908A2472AF1000290B09 /* colors_protanopia.txt */,
+				7F55908C2472B00C00290B09 /* colors_tritanopia.txt */,
 			);
 			path = FourthColor;
 			sourceTree = "<group>";
@@ -190,15 +200,6 @@
 			path = FourthColorTests;
 			sourceTree = "<group>";
 		};
-		7F579509246FD6A100058B12 /* FourthColorUITests */ = {
-			isa = PBXGroup;
-			children = (
-				7F57950A246FD6A100058B12 /* FourthColorUITests.swift */,
-				7F57950C246FD6A100058B12 /* Info.plist */,
-			);
-			path = FourthColorUITests;
-			sourceTree = "<group>";
-		};
 		D33160D8EFA7379C937B4FBC /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -215,6 +216,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		7F56AA45248C124600EDFC22 /* FourthColorUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7F56AA4D248C124600EDFC22 /* Build configuration list for PBXNativeTarget "FourthColorUITests" */;
+			buildPhases = (
+				7F56AA42248C124600EDFC22 /* Sources */,
+				7F56AA43248C124600EDFC22 /* Frameworks */,
+				7F56AA44248C124600EDFC22 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7F56AA4C248C124600EDFC22 /* PBXTargetDependency */,
+			);
+			name = FourthColorUITests;
+			productName = FourthColorUITests;
+			productReference = 7F56AA46248C124600EDFC22 /* FourthColorUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		7F5794E1246FD69F00058B12 /* FourthColor */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7F57950F246FD6A100058B12 /* Build configuration list for PBXNativeTarget "FourthColor" */;
@@ -253,44 +272,24 @@
 			productReference = 7F5794FB246FD6A100058B12 /* FourthColorTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		7F579505246FD6A100058B12 /* FourthColorUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 7F579515246FD6A100058B12 /* Build configuration list for PBXNativeTarget "FourthColorUITests" */;
-			buildPhases = (
-				458F133807522087362B66FD /* [CP] Check Pods Manifest.lock */,
-				7F579502246FD6A100058B12 /* Sources */,
-				7F579503246FD6A100058B12 /* Frameworks */,
-				7F579504246FD6A100058B12 /* Resources */,
-				97F3BAD3B83C2D6FBBB0FEED /* [CP] Embed Pods Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				7F579508246FD6A100058B12 /* PBXTargetDependency */,
-			);
-			name = FourthColorUITests;
-			productName = FourthColorUITests;
-			productReference = 7F579506246FD6A100058B12 /* FourthColorUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		7F5794DA246FD69F00058B12 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1140;
+				LastSwiftUpdateCheck = 1150;
 				LastUpgradeCheck = 1140;
 				ORGANIZATIONNAME = "Natalia Wcisło";
 				TargetAttributes = {
+					7F56AA45248C124600EDFC22 = {
+						CreatedOnToolsVersion = 11.5;
+						TestTargetID = 7F5794E1246FD69F00058B12;
+					};
 					7F5794E1246FD69F00058B12 = {
 						CreatedOnToolsVersion = 11.4.1;
 					};
 					7F5794FA246FD6A100058B12 = {
-						CreatedOnToolsVersion = 11.4.1;
-						TestTargetID = 7F5794E1246FD69F00058B12;
-					};
-					7F579505246FD6A100058B12 = {
 						CreatedOnToolsVersion = 11.4.1;
 						TestTargetID = 7F5794E1246FD69F00058B12;
 					};
@@ -311,33 +310,34 @@
 			targets = (
 				7F5794E1246FD69F00058B12 /* FourthColor */,
 				7F5794FA246FD6A100058B12 /* FourthColorTests */,
-				7F579505246FD6A100058B12 /* FourthColorUITests */,
+				7F56AA45248C124600EDFC22 /* FourthColorUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		7F56AA44248C124600EDFC22 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7F5794E0246FD69F00058B12 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7F8D470B2470858F007E2184 /* colors_small.txt in Resources */,
-				7FB605E72471F43900DB0C37 /* colors_protanopia.txt in Resources */,
+				7F8D470B2470858F007E2184 /* colors_original.txt in Resources */,
+				7FB605E72471F43900DB0C37 /* colors_acromatopia.txt in Resources */,
+				7F55908D2472B00C00290B09 /* colors_tritanopia.txt in Resources */,
 				7F5794F5246FD6A000058B12 /* LaunchScreen.storyboard in Resources */,
 				7F5794F2246FD6A000058B12 /* Preview Assets.xcassets in Resources */,
-				7F57951D246FD92200058B12 /* colors.txt in Resources */,
 				7F5794EF246FD6A000058B12 /* Assets.xcassets in Resources */,
+				7F55908B2472AF1000290B09 /* colors_protanopia.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		7F5794F9246FD6A100058B12 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		7F579504246FD6A100058B12 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -408,48 +408,17 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FourthColor/Pods-FourthColor-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		458F133807522087362B66FD /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-FourthColor-FourthColorUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		97F3BAD3B83C2D6FBBB0FEED /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-FourthColor-FourthColorUITests/Pods-FourthColor-FourthColorUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-FourthColor-FourthColorUITests/Pods-FourthColor-FourthColorUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FourthColor-FourthColorUITests/Pods-FourthColor-FourthColorUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		7F56AA42248C124600EDFC22 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7F56AA49248C124600EDFC22 /* FourthColorUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7F5794DE246FD69F00058B12 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -477,26 +446,18 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7F579502246FD6A100058B12 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				7F57950B246FD6A100058B12 /* FourthColorUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		7F56AA4C248C124600EDFC22 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7F5794E1246FD69F00058B12 /* FourthColor */;
+			targetProxy = 7F56AA4B248C124600EDFC22 /* PBXContainerItemProxy */;
+		};
 		7F5794FD246FD6A100058B12 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 7F5794E1246FD69F00058B12 /* FourthColor */;
 			targetProxy = 7F5794FC246FD6A100058B12 /* PBXContainerItemProxy */;
-		};
-		7F579508246FD6A100058B12 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 7F5794E1246FD69F00058B12 /* FourthColor */;
-			targetProxy = 7F579507246FD6A100058B12 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -512,6 +473,46 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		7F56AA4E248C124600EDFC22 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8FB9F9Q783;
+				INFOPLIST_FILE = FourthColorUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = nataliawcislo.FourthColorUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = FourthColor;
+			};
+			name = Debug;
+		};
+		7F56AA4F248C124600EDFC22 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8FB9F9Q783;
+				INFOPLIST_FILE = FourthColorUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = nataliawcislo.FourthColorUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = FourthColor;
+			};
+			name = Release;
+		};
 		7F57950D246FD6A100058B12 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -716,51 +717,18 @@
 			};
 			name = Release;
 		};
-		7F579516246FD6A100058B12 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = E35251E033111CD8DA43AAE7 /* Pods-FourthColor-FourthColorUITests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8FB9F9Q783;
-				INFOPLIST_FILE = FourthColorUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = nataliawcislo.FourthColorUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = FourthColor;
-			};
-			name = Debug;
-		};
-		7F579517246FD6A100058B12 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = C64A0F4F0AD3B24EC5CF2039 /* Pods-FourthColor-FourthColorUITests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8FB9F9Q783;
-				INFOPLIST_FILE = FourthColorUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = nataliawcislo.FourthColorUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = FourthColor;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		7F56AA4D248C124600EDFC22 /* Build configuration list for PBXNativeTarget "FourthColorUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7F56AA4E248C124600EDFC22 /* Debug */,
+				7F56AA4F248C124600EDFC22 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		7F5794DD246FD69F00058B12 /* Build configuration list for PBXProject "FourthColor" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -784,15 +752,6 @@
 			buildConfigurations = (
 				7F579513246FD6A100058B12 /* Debug */,
 				7F579514246FD6A100058B12 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		7F579515246FD6A100058B12 /* Build configuration list for PBXNativeTarget "FourthColorUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				7F579516246FD6A100058B12 /* Debug */,
-				7F579517246FD6A100058B12 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

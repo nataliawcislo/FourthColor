@@ -71,6 +71,7 @@ struct SavedGridView_Previews: PreviewProvider {
 
 
 struct GridView: View {
+    //pobieranie wszytskich zdj z bazki
     func fetchPhotos() -> [Photo] {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
             return []

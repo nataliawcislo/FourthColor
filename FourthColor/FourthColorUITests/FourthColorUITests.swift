@@ -2,7 +2,7 @@
 //  FourthColorUITests.swift
 //  FourthColorUITests
 //
-//  Created by Natalia Wcisło on 06/06/2020.
+//  Created by Natalia Wcisło on 16/05/2020.
 //  Copyright © 2020 Natalia Wcisło. All rights reserved.
 //
 

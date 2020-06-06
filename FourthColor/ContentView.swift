@@ -30,7 +30,6 @@ struct ContentView: View {
                             Button(action: {  self.showInfo.toggle()})
                             {
                                 RoundedRectangle(cornerRadius: 20)
-                                    .padding(.horizontal, -5.0)
                                     .foregroundColor(Color("ColorHStack"))
                                     .frame(width: 170 ,height: 170)
                                     .shadow(color: Color("ColorHStack"), radius: 1).opacity(1)
@@ -39,7 +38,7 @@ struct ContentView: View {
                             .sheet(isPresented: self.$showInfo) {
                                 Information()
                             }
-                        }.padding(3)
+                        }
                         
                         
                         NavigationLink(destination: SavedGridView()) {
@@ -54,18 +53,18 @@ struct ContentView: View {
                             
                         }
                         
-                    }.padding(.vertical, 10.0)
+                    }.padding(.bottom, 25).padding(.top, -8)
                     
-                    VStack{
-                        Button(action: {
-                            //                           self.attribute.scrollToTop()
-                        }){
-                            Image(systemName: "arrow.up.circle.fill")
-                                .font(.system(size: 60, weight: .light))
-                                .foregroundColor(Color("arrow"))
-                        }.padding(.bottom, 30.0)
-                            .padding(.top, 20.0)
-                    }
+//                    VStack{
+//                        Button(action: {
+//                            //                           self.attribute.scrollToTop()
+//                        }){
+//                            Image(systemName: "arrow.up.circle.fill")
+//                                .font(.system(size: 60, weight: .light))
+//                                .foregroundColor(Color("arrow"))
+//                        }.padding(.bottom, 30.0)
+//                            .padding(.top, 20.0)
+//                    }
                 }
                 
             } .navigationBarTitle(Text("Home"))
