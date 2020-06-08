@@ -63,7 +63,7 @@ struct SavedItemView: View {
                                 Image(systemName: "square.and.arrow.up")
                             }
                         }
-                    }
+                    }.accessibility(identifier: "mainPhoto")
 //                    HStack{
 //                        //                        Button(action: {
 //                        //                            // Navigate to the previous screen
@@ -122,6 +122,7 @@ struct SavedItemView: View {
                     Image(systemName: "chevron.left.circle.fill")
                         .font(.largeTitle)
                         .foregroundColor(Color(.systemBlue))
+                        .accessibility(identifier: "backButton")
                 })
             )
             .edgesIgnoringSafeArea(.all)

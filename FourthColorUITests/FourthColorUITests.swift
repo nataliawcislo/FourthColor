@@ -7,37 +7,81 @@
 //
 
 import XCTest
+@testable import FourthColor
 
 class FourthColorUITests: XCTestCase {
 
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-
-        // In UI tests it is usually best to stop immediately when a failure occurs.
         continueAfterFailure = false
-
-        // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
     }
 
     override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        
     }
 
-    func testExample() throws {
-        // UI tests must launch the application that they test.
+    func testColorBlindnessInformation() throws {
         let app = XCUIApplication()
         app.launch()
-
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        
+        app.swipeUp()
+        app.swipeUp()
+        app.buttons["Color Blindness"].tap()
+        
+        XCTAssertTrue(app.isDisplayingColorBlindnessInformation)
+    }
+    
+    func testCameraAndGallery() throws {
+        let app = XCUIApplication()
+        app.launchArguments.append("isUITesting")
+        app.launch()
+        
+        app.buttons["Deuteranomaly"].tap()
+        
+        XCTAssertTrue(app.isDisplayingCamera)
+        
+        let cameraElement = app.otherElements["camera"]
+        
+        if cameraElement.waitForExistence(timeout: 5) {
+            cameraElement.doubleTap()
+        }
+        
+        app.buttons["backButton"].tap()
+        
+        XCTAssertFalse(app.isDisplayingMainPhoto)
+        
+        app.swipeUp()
+        app.swipeUp()
+        app.buttons["Gallery"].tap()
+        app.images["galleryPhoto0"].tap()
+        
+        XCTAssertTrue(app.isDisplayingMainPhoto)
+        
+        app.buttons["backButton"].tap()
+        
+        app.buttons["Home"].tap()
+        
+        XCTAssertFalse(app.isDisplayingMainPhoto)
     }
 
     func testLaunchPerformance() throws {
         if #available(macOS 10.15, iOS 13.0, tvOS 13.0, *) {
-            // This measures how long it takes to launch your application.
             measure(metrics: [XCTOSSignpostMetric.applicationLaunch]) {
                 XCUIApplication().launch()
             }
         }
+    }
+}
+
+extension XCUIApplication {
+    var isDisplayingColorBlindnessInformation: Bool {
+        return staticTexts["colorBlindnessInformation"].exists
+    }
+    
+    var isDisplayingMainPhoto: Bool {
+        return images["mainPhoto"].exists
+    }
+    
+    var isDisplayingCamera: Bool {
+        return otherElements["camera"].exists
     }
 }

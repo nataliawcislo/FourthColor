@@ -10,6 +10,7 @@ import XCTest
 import CoreData
 @testable import FourthColor
 
+// test bazy danych
 class PhotoConnectionTests: XCTestCase {
     var photoConnection: PhotoConnection? = nil
 

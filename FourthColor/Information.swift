@@ -23,6 +23,7 @@ struct Information: View {
                     Text("Also called color recognition disorder, people are unable to see the differences between some or different colors, Blindness is a birth defect, genetically determined, recessively inherited in the X-linked conjugation. Because men do not pass their X chromosome to their male descendants, and then male dyed with blindness does not pass it on to his son. A woman with nearly two X chromosomes can carry the stained blindness gene without even realizing it.").fontWeight(.light).font(.custom("Helvetica Neue", size:18))
                         .foregroundColor(Color("ColorText"))
                         .padding(.horizontal)
+                        .accessibility(identifier: "colorBlindnessInformation")
                 VStack{
                     Image("test1").resizable().scaledToFit()
                     Image("test2").resizable().scaledToFit().padding(.vertical,5)

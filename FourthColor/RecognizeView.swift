@@ -21,6 +21,7 @@ struct RecognizeView: View {
     var body: some View {
 
         CameraView(defect: defect)
+            .accessibility(identifier: "camera")
                // .navigationBarTitle("")
                // .navigationBarHidden(true)
                 .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
@@ -33,9 +34,10 @@ struct RecognizeView: View {
                        // Navigate to the previous screen
                        self.presentationMode.wrappedValue.dismiss()
                    }, label: {
-                       Image(systemName: "chevron.left.circle.fill")
-                           .font(.largeTitle)
+                        Image(systemName: "chevron.left.circle.fill")
+                        .font(.largeTitle)
                         .foregroundColor(Color(.systemBlue))
+                        .accessibility(identifier: "backButton")
                    })
                )
         
@@ -89,7 +91,7 @@ let HEIGHT = UIScreen.main.bounds.height
 
 class CameraViewController : UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate {
     init(filename: String) {
-        self.colors = ColorSet.new(fromFilename: filename)!
+        self.colors = try! ColorSet(fromFilename: filename)
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -285,8 +287,8 @@ class CameraViewController : UIViewController, AVCaptureVideoDataOutputSampleBuf
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        loadCamera()
         updatePickersPosition()
+        loadCamera()
     }
     
     let queue = DispatchQueue(label: "com.camera.video.queue")
@@ -300,6 +302,13 @@ class CameraViewController : UIViewController, AVCaptureVideoDataOutputSampleBuf
     var uttered: Bool = false
     
     func loadCamera() {
+        if ProcessInfo.processInfo.isUITesting {
+            self.currentPhoto = UIImage(named: "1")
+            self.pickerLayer.contents = UIImage(named: "1")!.cgImage
+            self.updatePickersColor()
+            return
+        }
+        
         self.captureSession.sessionPreset = AVCaptureSession.Preset.hd1280x720
         
         self.backFacingCamera = AVCaptureDevice.default(.builtInWideAngleCamera, for: AVMediaType.video, position: .back)
@@ -415,3 +424,9 @@ public extension CALayer {
 //
 //    func 
 //}
+
+extension ProcessInfo {
+    var isUITesting: Bool {
+        return arguments.contains("isUITesting")
+    }
+}

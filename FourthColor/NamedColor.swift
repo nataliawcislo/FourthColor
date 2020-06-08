@@ -32,19 +32,11 @@ class ColorSet {
         let l: CGFloat
     }
     
-    public static func new(fromFilename filename: String) -> ColorSet? {
-        do {
-            return try ColorSet(fromFilename: filename)
-        } catch {
-            return nil
-        }
-    }
-    
-    private init(fromFilename filename: String) throws {
+    public convenience init(fromFilename filename: String) throws {
         let path = Bundle.main.path(forResource: filename, ofType: "txt")!
         let data = try String(contentsOfFile: path, encoding: .utf8)
         let lines: [String] = data.components(separatedBy: .newlines)
-        self.sortedColors = []
+        var inputs: [(String, Int, Int, Int, String)] = []
         for line in lines {
             if line != "" {
                 let components = line.split(separator: ";")
@@ -53,21 +45,27 @@ class ColorSet {
                 let g: Int = Int(components[2]) ?? 0
                 let b: Int = Int(components[3]) ?? 0
                 let description: String = String(components[4])
-                let value = (r << 16) + (g << 8) + b
-                let red = CGFloat(r) / 255.0
-                let green = CGFloat(g) / 255.0
-                let blue = CGFloat(b) / 255.0
-                let color = UIColor(red: red, green: green, blue: blue, alpha: 1.0)
-                let namedColor = NamedColor(name: name, color: color, description: description)
-                let rgb = RGB(r: red, g: green, b: blue)
-                let hsl = toHSL(rgb: rgb)
-                self.sortedColors.append((value, namedColor, rgb, hsl))
+                inputs.append((name, r, g, b, description))
             }
         }
-        self.sortedColors = self.sortedColors.sorted(by: { $0.0 > $1.0 })
+        self.init(inputs)
     }
     
-    private func toHSL(rgb: RGB) -> HSL {
+    public init(_ list: [(String, Int, Int, Int, String)]) {
+        self.sortedColors = list.map { (name, r, g, b, description) -> (Int, NamedColor, RGB, HSL) in
+            let value = (r << 16) + (g << 8) + b
+            let red = CGFloat(r) / 255.0
+            let green = CGFloat(g) / 255.0
+            let blue = CGFloat(b) / 255.0
+            let color = UIColor(red: red, green: green, blue: blue, alpha: 1.0)
+            let namedColor = NamedColor(name: name, color: color, description: description)
+            let rgb = RGB(r: red, g: green, b: blue)
+            let hsl = ColorSet.toHSL(rgb: rgb)
+            return (value, namedColor, rgb, hsl)
+        }.sorted(by: { $0.0 > $1.0 })
+    }
+    
+    private static func toHSL(rgb: RGB) -> HSL {
         let maximum = max(rgb.r, max(rgb.g, rgb.b))
         let minimum = min(rgb.r, min(rgb.g, rgb.b))
         
@@ -121,11 +119,11 @@ class ColorSet {
 //przypisywanie kolor do najblizszego
 //liczy odleglosc miedzy kolorami
     private func getNearest(rgb: RGB) -> NamedColor? {
-        let hsl = toHSL(rgb: rgb)
+        let hsl = ColorSet.toHSL(rgb: rgb)
         let f = { (x: (Int, NamedColor, RGB, HSL)) -> CGFloat in
             let ndf1 = pow(rgb.r - x.2.r, 2) + pow(rgb.g - x.2.g, 2) + pow(rgb.b - x.2.b, 2)
             let ndf2 = pow(hsl.h - x.3.h, 2) + pow(hsl.s - x.3.s, 2) + pow(hsl.l - x.3.l, 2)
-            let ndf = ndf1 + 2 * ndf2
+            let ndf = ndf1 + ndf2
             return ndf
         }
         return self.sortedColors.max(by: { f($0) > f($1) })?.1

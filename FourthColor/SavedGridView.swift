@@ -42,7 +42,7 @@ struct SavedGridView: View {
             }.padding(.all, 10.0)
             
         }
-        .navigationBarTitle(Text("Dashboard").font(.subheadline), displayMode: .large)
+        .navigationBarTitle(Text("Gallery").font(.subheadline), displayMode: .large)
 
 //        .navigationBarBackButtonHidden(true)
 //          //  .edgesIgnoringSafeArea(.top)
@@ -89,7 +89,7 @@ struct GridView: View {
                         NavigationLink(destination: SavedItemView(photo: photos[number])) {
                             Rectangle().hidden()
                         }
-                    }
+                    }.accessibility(identifier: "galleryPhoto\(number)")
                 }
             }
         }
