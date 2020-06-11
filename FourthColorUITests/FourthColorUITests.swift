@@ -38,7 +38,7 @@ class FourthColorUITests: XCTestCase {
         app.buttons["Deuteranomaly"].tap()
         
         XCTAssertTrue(app.isDisplayingCamera)
-        
+        //ref do kamery
         let cameraElement = app.otherElements["camera"]
         
         if cameraElement.waitForExistence(timeout: 5) {
@@ -46,20 +46,20 @@ class FourthColorUITests: XCTestCase {
         }
         
         app.buttons["backButton"].tap()
-        
+       // strawdzam czy nie wyswietlam glownego zdj w galerii
         XCTAssertFalse(app.isDisplayingMainPhoto)
         
         app.swipeUp()
         app.swipeUp()
         app.buttons["Gallery"].tap()
         app.images["galleryPhoto0"].tap()
-        
+         // strawdzam czy  wyswietlam glowne zdj w galerii
         XCTAssertTrue(app.isDisplayingMainPhoto)
         
         app.buttons["backButton"].tap()
         
         app.buttons["Home"].tap()
-        
+        // strawdzam czy nie wyswietlam glownego zdj w galerii
         XCTAssertFalse(app.isDisplayingMainPhoto)
     }
 
@@ -72,6 +72,7 @@ class FourthColorUITests: XCTestCase {
     }
 }
 
+//  istniej na ekranie
 extension XCUIApplication {
     var isDisplayingColorBlindnessInformation: Bool {
         return staticTexts["colorBlindnessInformation"].exists
