@@ -1,14 +1,8 @@
 PODS:
   - FINNBottomSheet (4.2.0)
-  - SwiftDrawer (5.0.2)
 
 DEPENDENCIES:
   - FINNBottomSheet (from `https://github.com/finn-no/BottomSheet.git`)
-  - SwiftDrawer
-
-SPEC REPOS:
-  trunk:
-    - SwiftDrawer
 
 EXTERNAL SOURCES:
   FINNBottomSheet:
@@ -21,8 +15,7 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   FINNBottomSheet: 429cccf0ed60d3b24308e68c21ca4c1d84178eed
-  SwiftDrawer: 2ed1b1e13fa46323bb04b6cc417c05edf51b1b4a
 
-PODFILE CHECKSUM: f0b69ef4acba0bd29b5b30ecb230acafa386e382
+PODFILE CHECKSUM: 4a751505b078767ec4a0a033c41fdd304a81f63c
 
-COCOAPODS: 1.9.1
+COCOAPODS: 1.9.3
