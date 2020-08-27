@@ -21,6 +21,18 @@ struct ContentView: View {
                 MenuCardView()
                 
                 //.padding(.top, 20.0)
+                VStack{
+                    NavigationLink(destination: IshiharaTestView()){
+                       ZStack{
+                           RoundedRectangle(cornerRadius: 20)
+                               .padding(.horizontal, 15.0)
+                               .foregroundColor(Color(.systemGray2))
+                               .frame(height: 150.0)
+                            .overlay(Text("Test").fontWeight(.light).font(.custom("Helvetica Neue", size: 34)).foregroundColor(Color(.black)))
+                        }
+                   }
+               }.padding(.bottom, 25).padding(.top, -8)
+                               
                 
                 VStack{
                     
