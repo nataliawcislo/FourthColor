@@ -28,7 +28,7 @@
 		7F579527246FDA3500058B12 /* RecognizeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F579526246FDA3500058B12 /* RecognizeView.swift */; };
 		7F57952A246FF53000058B12 /* Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F579529246FF53000058B12 /* Info.swift */; };
 		7F5CB28224F702EA00517537 /* HueTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5CB28124F702EA00517537 /* HueTestView.swift */; };
-		7F5CB28424F70B1F00517537 /* PuzzleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5CB28324F70B1F00517537 /* PuzzleView.swift */; };
+		7F5CB28424F70B1F00517537 /* HueLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5CB28324F70B1F00517537 /* HueLine.swift */; };
 		7F5CB28624F70D5300517537 /* HueColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5CB28524F70D5300517537 /* HueColor.swift */; };
 		7F5CB28A24F71F3500517537 /* HueResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5CB28924F71F3500517537 /* HueResultsView.swift */; };
 		7F5CB28C24F71F5200517537 /* IshiharaResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5CB28B24F71F5200517537 /* IshiharaResultsView.swift */; };
@@ -89,7 +89,7 @@
 		7F579526246FDA3500058B12 /* RecognizeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecognizeView.swift; sourceTree = "<group>"; };
 		7F579529246FF53000058B12 /* Info.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Info.swift; sourceTree = "<group>"; };
 		7F5CB28124F702EA00517537 /* HueTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HueTestView.swift; sourceTree = "<group>"; };
-		7F5CB28324F70B1F00517537 /* PuzzleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleView.swift; sourceTree = "<group>"; };
+		7F5CB28324F70B1F00517537 /* HueLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HueLine.swift; sourceTree = "<group>"; };
 		7F5CB28524F70D5300517537 /* HueColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HueColor.swift; sourceTree = "<group>"; };
 		7F5CB28924F71F3500517537 /* HueResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HueResultsView.swift; sourceTree = "<group>"; };
 		7F5CB28B24F71F5200517537 /* IshiharaResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IshiharaResultsView.swift; sourceTree = "<group>"; };
@@ -201,7 +201,7 @@
 				7F56AA50248C2FFD00EDFC22 /* PhotoConnection.swift */,
 				7FF7B91524F6F82D003A2284 /* IshiharaTestView.swift */,
 				7F5CB28124F702EA00517537 /* HueTestView.swift */,
-				7F5CB28324F70B1F00517537 /* PuzzleView.swift */,
+				7F5CB28324F70B1F00517537 /* HueLine.swift */,
 				7F5CB28524F70D5300517537 /* HueColor.swift */,
 				7F5CB28B24F71F5200517537 /* IshiharaResultsView.swift */,
 			);
@@ -491,7 +491,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7F57951F246FD99600058B12 /* MenuCardView.swift in Sources */,
-				7F5CB28424F70B1F00517537 /* PuzzleView.swift in Sources */,
+				7F5CB28424F70B1F00517537 /* HueLine.swift in Sources */,
 				7F8D47092470537B007E2184 /* NamedColor.swift in Sources */,
 				7FF7B91624F6F82D003A2284 /* IshiharaTestView.swift in Sources */,
 				7F579525246FDA2000058B12 /* SavedGridView.swift in Sources */,
