@@ -2,8 +2,13 @@
   "colors" : [
     {
       "color" : {
-        "platform" : "osx",
-        "reference" : "systemBrownColor"
+        "color-space" : "srgb",
+        "components" : {
+          "alpha" : "1.000",
+          "blue" : "0.367",
+          "green" : "0.514",
+          "red" : "0.635"
+        }
       },
       "idiom" : "universal"
     },
@@ -15,8 +20,13 @@
         }
       ],
       "color" : {
-        "platform" : "osx",
-        "reference" : "systemBrownColor"
+        "color-space" : "srgb",
+        "components" : {
+          "alpha" : "1.000",
+          "blue" : "0.379",
+          "green" : "0.527",
+          "red" : "0.635"
+        }
       },
       "idiom" : "universal"
     },
@@ -28,8 +38,13 @@
         }
       ],
       "color" : {
-        "platform" : "osx",
-        "reference" : "controlAccentColor"
+        "color-space" : "srgb",
+        "components" : {
+          "alpha" : "1.000",
+          "blue" : "0.346",
+          "green" : "0.305",
+          "red" : "1.000"
+        }
       },
       "idiom" : "universal"
     }
